@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #1f1f1f;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.logo img {
+  height: 58px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #2d2d2d;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+  background: #eef4ff;
+  color: #183a63;
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto 60px;
+  padding: 0 20px;
+}
+
+.page-section {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 22px;
+}
+
+.home-banner {
+  background: linear-gradient(135deg, #dfeaf7, #f5f7fa);
+  border: 1px solid #d4dfe9;
+  border-radius: 12px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #566d82;
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+h1, h2 {
+  margin-bottom: 12px;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.cta-row {
+  margin-top: 18px;
+}
+
+.button-link {
+  display: inline-block;
+  text-decoration: none;
+  background: #183a63;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.button-link.secondary {
+  background: #e8edf6;
+  color: #1a2d40;
+  margin-left: 10px;
+}
+
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .top-nav {
+    gap: 8px;
+  }
+
+  .page-section {
+    padding: 22px 18px;
+  }
+}
