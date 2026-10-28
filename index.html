@@ -1,181 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Structure</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cedar Pointe Golf Course | Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
+          <img src="cedarpointegolfcourse.jpg" alt="Cedar Pointe Golf Course" />
+        </a>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      z-index: 10;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 180px;
-    }
-
-    .logo-placeholder {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #555, #999);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .logo-text {
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    .top-nav {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .top-nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: 0.2s ease;
-    }
-
-    .top-nav a:hover,
-    .top-nav a.active {
-      background: #f0f0f0;
-      color: #111;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 30px;
-      margin-bottom: 20px;
-    }
-
-    h1, h2 {
-      margin-bottom: 12px;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <div class="container header-inner">
-      <div class="logo">
-        <div class="logo-placeholder">LOGO</div>
-        <div class="logo-text">Brand Name</div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="index.html" class="active">Home</a>
+          <a href="ad-page.html">Ad Page</a>
+          <a href="landing-page.html">Landing Page</a>
+        </nav>
       </div>
+    </header>
 
-      <nav class="top-nav" aria-label="Main navigation">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <div class="hero-banner" aria-label="Banner placeholder">Banner Placeholder</div>
 
-  <main>
-    <section id="home">
-      <h1>Home</h1>
-      <p>Welcome to the homepage. This is where the main content begins.</p>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>Introduce your company, mission, or purpose here.</p>
-    </section>
-
-    <section id="services">
-      <h2>Services</h2>
-      <p>List your services or offerings here.</p>
-    </section>
-
-    <section id="portfolio">
-      <h2>Portfolio</h2>
-      <p>Showcase your projects and work samples here.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Display contact details or a contact form here.</p>
-    </section>
-  </main>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll(".top-nav a");
-
-      navLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-          event.preventDefault();
-
-          navLinks.forEach(item => item.classList.remove("active"));
-          this.classList.add("active");
-
-          const targetId = this.getAttribute("href");
-          const targetSection = document.querySelector(targetId);
-
-          if (targetSection) {
-            targetSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-          }
-        });
-      });
-    });
-  </script>
-</body>
+    <main>
+      <section class="page-section">
+        <h1>Welcome to Cedar Pointe</h1>
+        <p>
+          Experience premier golf, scenic fairways, and a welcoming destination designed for
+          players of every level.
+        </p>
+        <p>
+          This Home page serves as the main landing point for visitors, with a full-width banner
+          placeholder ready to be replaced by a future promotional image.
+        </p>
+        <div class="cta-row">
+          <a class="button-link" href="landing-page.html">View Landing Page</a>
+          <a class="button-link secondary" href="ad-page.html">Open Ad Page</a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
