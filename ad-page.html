@@ -1,87 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cedar Pointe Golf Course | Ad Page</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="container header-inner">
-        <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
-          <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Ads</title>
+  <style>
+    :root {
+      /* Replace with the exact maroon from landing-page.html */
+      --maroon: #800000;
+      --ad-gap: 24px;          /* space between stacked ads */
+      --rect-height: 250px;    /* medium rectangle height */
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #222;
+      font-family: inherit;
+      line-height: 1.6;
+    }
+
+    /* One-inch margin on the left and right of the screen */
+    .page {
+      padding: 32px 1in;
+    }
+
+    .ad-link {
+      display: block;
+      line-height: 0;   /* removes the gap under images */
+    }
+
+    .ad-link img {
+      display: block;
+    }
+
+    /* Leaderboard */
+    .leaderboard {
+      display: flex;
+      justify-content: flex-end;   /* top right, like the photo */
+      margin-bottom: var(--ad-gap);
+    }
+    .leaderboard img { width: 728px; height: 90px; }
+
+    /* Three-column layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 300px 1fr 300px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Left column: half page, pushed down so its top lines up
+       with the top of the wide skyscraper on the right */
+    .left-col {
+      padding-top: calc(var(--rect-height) + var(--ad-gap));
+    }
+    .left-col img { width: 300px; height: 600px; }
+
+    /* Right column: medium rectangle with the skyscraper underneath */
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: var(--ad-gap);
+    }
+    .right-col .medium-rect img { width: 300px; height: 250px; }
+    .right-col .skyscraper img { width: 160px; height: 600px; }
+
+    /* Strategy text */
+    .strategy h2 {
+      color: var(--maroon);
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+      margin: 0 0 12px;
+    }
+    .strategy section + section {
+      margin-top: 56px;
+    }
+    .strategy p {
+      margin: 0;
+    }
+
+    /* Always keep the side-by-side layout; never stack or overlap.
+       On narrow windows the page scrolls sideways instead. */
+    .page {
+      min-width: calc(300px + 300px + 400px + 96px + 2in);
+    }
+    .layout {
+      grid-template-columns: 300px minmax(400px, 1fr) 300px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <div class="leaderboard">
+      <a class="ad-link" href="landing-page.html">
+        <img src="%28728%20x%2090%20px%29.png" alt="Leaderboard ad">
+      </a>
+    </div>
+
+    <div class="layout">
+
+      <aside class="left-col">
+        <a class="ad-link" href="landing-page.html">
+          <img src="%28300%20x%20600%20px%29.png" alt="Half page ad">
         </a>
+      </aside>
 
-        <nav class="top-nav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="ad-page.html" class="active">Ad Page</a>
-          <a href="landing-page.html">Landing Page</a>
-        </nav>
-      </div>
-    </header>
+      <article class="strategy">
+        <section>
+          <h2>Ad Strategy Overview</h2>
+          <p>[Write overview here]</p>
+        </section>
+        <section>
+          <h2>Target Audience</h2>
+          <p>[Write target audience here]</p>
+        </section>
+        <section>
+          <h2>Placement Rationale</h2>
+          <p>[Write placement rationale here]</p>
+        </section>
+        <section>
+          <h2>Design Choices</h2>
+          <p>[Write design choices here]</p>
+        </section>
+        <section>
+          <h2>Goals &amp; Metrics</h2>
+          <p>[Write goals and metrics here]</p>
+        </section>
+      </article>
 
-    <main class="ads-page">
-      <section class="ad-top-wrap">
-        <div class="ad-label">Advertisement</div>
-        <a href="landing-page.html" class="ad-unit leaderboard" aria-label="Leaderboard Ad">
-          <img src="(728 x 90 px).png" alt="Leaderboard advertisement" width="728" height="90" />
+      <aside class="right-col">
+        <a class="ad-link medium-rect" href="landing-page.html">
+          <img src="%28300%20x%20250%20px%29.png" alt="Medium rectangle ad">
         </a>
-        <div class="ad-caption">Leaderboard — 728 × 90</div>
-      </section>
+        <a class="ad-link skyscraper" href="landing-page.html">
+          <img src="%28160%20x%20600%20px%29.png" alt="Wide skyscraper ad">
+        </a>
+      </aside>
 
-      <div class="ad-layout">
-        <aside class="ad-column left-column">
-          <div class="ad-label">Advertisement</div>
-          <a href="landing-page.html" class="ad-unit skyscraper" aria-label="Wide Skyscraper Ad">
-            <img src="(160 x 600 px).png" alt="Wide skyscraper advertisement" width="160" height="600" />
-          </a>
-          <div class="ad-caption">Wide Skyscraper — 160 × 600</div>
-        </aside>
-
-        <div class="ad-content">
-          <section class="ad-strategy-section">
-            <h2>Ad Strategy Overview</h2>
-            <p>[Write overview here]</p>
-          </section>
-
-          <section class="ad-strategy-section">
-            <h2>Goal Selection</h2>
-            <p>[Write goal selection here]</p>
-          </section>
-
-          <div class="ad-inline-block">
-            <div class="ad-label">Advertisement</div>
-            <a href="landing-page.html" class="ad-unit medium-rectangle" aria-label="Medium Rectangle Ad">
-              <img src="(300 x 250 px).png" alt="Medium rectangle advertisement" width="300" height="250" />
-            </a>
-            <div class="ad-caption">Medium Rectangle — 300 × 250</div>
-          </div>
-
-          <section class="ad-strategy-section">
-            <h2>Targeting</h2>
-            <p>[Write targeting here]</p>
-          </section>
-
-          <section class="ad-strategy-section">
-            <h2>The Hook</h2>
-            <p>[Write hook here]</p>
-          </section>
-
-          <section class="ad-strategy-section">
-            <h2>Financial Estimates</h2>
-            <p>[Write financial estimates here]</p>
-          </section>
-        </div>
-
-        <aside class="ad-column right-column">
-          <div class="ad-label">Advertisement</div>
-          <a href="landing-page.html" class="ad-unit half-page" aria-label="Half Page Ad">
-            <img src="(300 x 600 px).png" alt="Half page advertisement" width="300" height="600" />
-          </a>
-          <div class="ad-caption">Half Page — 300 × 600</div>
-        </aside>
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>
