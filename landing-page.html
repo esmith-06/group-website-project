@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cedar Pointe Golf Course | Landing Page</title>
+    <meta
+      name="description"
+      content="Nine and Wine at Cedar Pointe Golf Course in Boone, Iowa. Book your tee time for a night out on the course with wine, pizza, and live patio entertainment."
+    />
+    <title>Cedar Pointe Golf Course | Nine and Wine</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="topbar">
       <div class="container header-inner">
         <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
-          <img src="cedarpointegolfcourse.jpg" alt="Cedar Pointe Golf Course" />
+          <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
         </a>
 
         <nav class="top-nav" aria-label="Main navigation">
@@ -21,21 +25,266 @@
       </div>
     </header>
 
-    <main>
-      <section class="page-section">
-        <h1>Landing Page</h1>
-        <p>
-          This page is designed as the primary destination for first-time visitors and prospects
-          interested in learning more about the course experience.
-        </p>
-        <p>
-          Add audience-focused messaging, membership highlights, or call-to-action content here as
-          your final conversion page.
-        </p>
-        <div class="cta-row">
-          <a class="button-link" href="ad-page.html">Visit Ad Page</a>
+    <main class="event-page">
+      <section class="hero" aria-label="Nine and Wine event hero image">
+        <div class="hero-content">
+          <h1>Nine and Wine</h1>
+          <p class="tagline">Your Night Out. Your Kind of Fun.</p>
+          <a class="primary-button" href="#book-your-tee-time">Book Your Tee Time</a>
+        </div>
+      </section>
+
+      <section class="content-shell">
+        <div class="section-copy">
+          <h2>A Night Out on the Course</h2>
+          <p class="event-detail">Thursday, April 22, 2027</p>
+          <p class="event-detail">Cedar Pointe Golf Course | Boone, Iowa</p>
+          <p class="event-detail">Tee times: 5–6 p.m.</p>
+          <p class="event-detail">Food, wine &amp; live patio entertainment until 10 p.m.</p>
+
+          <p>
+            “Grab your friends and join us for Nine and Wine, a monthly night out bringing women in
+            our community together on the course. Enjoy an evening of golf and live entertainment on
+            the patio. Wine and pizza will be available for purchase, with pizza provided by Bellucci
+            Pizza House in Boone. Unwind, meet new friends, and make a night of it.”
+          </p>
+
+          <p class="note">
+            “Golf is available as daylight allows. Stay afterward for food, wine, and live patio
+            entertainment until 10 p.m.”
+          </p>
+        </div>
+      </section>
+
+      <section id="book-your-tee-time" class="content-shell booking-section">
+        <div class="booking-copy">
+          <h2>Book Your Tee Time</h2>
+          <p>“Choose your tee time, gather your group, and join us for a night out.”</p>
+        </div>
+
+        <div class="pricing-block" aria-label="Event pricing information">
+          <p>“9 holes: $24 per person”</p>
+          <p>“Optional cart rental: $15 per rider”</p>
+          <p>“Wine and pizza are available for purchase separately.”</p>
+          <p class="pricing-note">“Pricing is based on Cedar Pointe’s published 2026 weekday rates.”</p>
+        </div>
+
+        <form id="booking-form" class="booking-form" novalidate>
+          <div class="field-row">
+            <div class="field-group">
+              <label for="full-name">Full name</label>
+              <input id="full-name" name="fullName" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="field-group">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+
+            <div class="field-group blank-field" aria-hidden="true"></div>
+          </div>
+
+          <div class="field-row booking-selects">
+            <div class="field-group">
+              <label for="tee-time">Tee time</label>
+              <select id="tee-time" name="teeTime" required>
+                <option value="" selected disabled>Select a tee time</option>
+                <option value="5:00 p.m.">5:00 p.m.</option>
+                <option value="5:15 p.m.">5:15 p.m.</option>
+                <option value="5:30 p.m.">5:30 p.m.</option>
+                <option value="5:45 p.m.">5:45 p.m.</option>
+                <option value="6:00 p.m.">6:00 p.m.</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="group-size">Number of golfers</label>
+              <select id="group-size" name="groupSize" required>
+                <option value="" selected disabled>Select group size</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="fine-note">“Carts are available to rent for $15 per rider. Please request one when you check in for your tee time.”</p>
+          <p id="golf-subtotal" class="golf-subtotal" aria-live="polite">Select your group size to see your golf subtotal.</p>
+          <p class="additional-note">Cart rental, food, and wine are additional.</p>
+
+          <button type="submit" class="primary-button">Book Now</button>
+          <p class="demo-note">Demo booking form. No real reservations or emails will be sent.</p>
+
+          <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
+        </form>
+      </section>
+
+      <section class="content-shell highlights-section">
+        <h2>Make a Night of It</h2>
+        <div class="highlights-grid">
+          <article class="highlight-card">
+            <h3>Time on the Course</h3>
+            <p>“Bring your friends for an evening round, with tee times available from 5–6 p.m. Play as daylight allows.”</p>
+          </article>
+
+          <article class="highlight-card">
+            <h3>Wine &amp; Pizza</h3>
+            <p>“Enjoy wine and pizza available for purchase, with pizza from Bellucci Pizza House in Boone.”</p>
+          </article>
+
+          <article class="highlight-card">
+            <h3>Live on the Patio</h3>
+            <p>“Keep the evening going with live patio entertainment, food, and wine until 10 p.m.”</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-shell faq-section">
+        <h2>Before You Head Out</h2>
+
+        <div class="faq-list">
+          <details>
+            <summary>What does the golf price include?</summary>
+            <p>“The $24 per-person price covers the nine-hole greens fee. Cart rental is an additional $15 per rider. Wine and pizza are sold separately.”</p>
+          </details>
+
+          <details>
+            <summary>How many people can I book for?</summary>
+            <p>“You can book for one to four golfers using the reservation form.”</p>
+          </details>
+
+          <details>
+            <summary>How late can we golf?</summary>
+            <p>“Tee times run from 5–6 p.m., and play is limited by available daylight. Food, wine, and live patio entertainment continue until 10 p.m.”</p>
+          </details>
+
+          <details>
+            <summary>Do I need to reserve a cart?</summary>
+            <p>“Please request a cart when you check in. Rental is $15 per rider, with a maximum of two riders per cart.”</p>
+          </details>
+
+          <details>
+            <summary>Who should I contact with questions?</summary>
+            <p>“Contact Cedar Pointe Golf Course at <a href="tel:+15154326002">(515) 432-6002</a>.”</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="content-shell location-section">
+        <h2>Meet Us at Cedar Pointe</h2>
+        <div class="location-block">
+          <p>Cedar Pointe Golf Course</p>
+          <p>601 South Cedar Street</p>
+          <p>Boone, IA 50036</p>
+          <p>Phone: <a href="tel:+15154326002">(515) 432-6002</a></p>
+          <p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=601+South+Cedar+Street+Boone+IA+50036"
+              target="_blank"
+              rel="noreferrer"
+              class="map-link"
+              >Get Directions</a
+            >
+          </p>
+        </div>
+
+        <div class="cta-row centered">
+          <a class="primary-button" href="#book-your-tee-time">Book Your Tee Time</a>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Cedar Pointe Golf Course</p>
+        <p>Boone, Iowa</p>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById('booking-form');
+      const groupSizeSelect = document.getElementById('group-size');
+      const teeTimeSelect = document.getElementById('tee-time');
+      const fullNameInput = document.getElementById('full-name');
+      const emailInput = document.getElementById('email');
+      const subtotalElement = document.getElementById('golf-subtotal');
+      const formStatus = document.getElementById('form-status');
+
+      function updateSubtotal() {
+        const groupSize = Number(groupSizeSelect.value);
+
+        if (!groupSize) {
+          subtotalElement.textContent = 'Select your group size to see your golf subtotal.';
+          return;
+        }
+
+        const subtotal = groupSize * 24;
+        subtotalElement.textContent = `Golf subtotal: $${subtotal}`;
+      }
+
+      function formatGroupText(groupSize) {
+        return groupSize === 1 ? '1 golfer' : `${groupSize} golfers`;
+      }
+
+      groupSizeSelect.addEventListener('change', updateSubtotal);
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const fullName = fullNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const teeTime = teeTimeSelect.value;
+        const groupSize = Number(groupSizeSelect.value);
+
+        fullNameInput.setCustomValidity(fullName ? '' : 'Please enter your full name.');
+
+        if (!email) {
+          emailInput.setCustomValidity('Please enter your email address.');
+        } else {
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          emailInput.setCustomValidity(emailPattern.test(email) ? '' : 'Please enter a valid email address.');
+        }
+
+        teeTimeSelect.setCustomValidity(teeTime ? '' : 'Please choose a tee time.');
+        groupSizeSelect.setCustomValidity(groupSize ? '' : 'Please choose a group size.');
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        const firstName = fullName.split(/\s+/)[0];
+        const subtotal = groupSize * 24;
+
+        formStatus.innerHTML = '';
+        formStatus.classList.add('visible');
+
+        const heading = document.createElement('h3');
+        heading.textContent = 'You’re on the list!';
+
+        const confirmationOne = document.createElement('p');
+        confirmationOne.textContent = `Thanks, ${firstName}! Your demo reservation is for ${formatGroupText(groupSize)} at ${teeTime} on Thursday, April 22, 2027.`;
+
+        const confirmationTwo = document.createElement('p');
+        confirmationTwo.textContent = `Golf subtotal: $${subtotal}. Cart rental, food, and wine are additional.`;
+
+        const confirmationThree = document.createElement('p');
+        confirmationThree.textContent = `In a live booking system, a confirmation email would be sent to ${email}. This demo does not send emails or reserve a tee time.`;
+
+        formStatus.append(heading, confirmationOne, confirmationTwo, confirmationThree);
+
+        form.reset();
+        updateSubtotal();
+      });
+
+      updateSubtotal();
+    </script>
   </body>
 </html>
