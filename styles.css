@@ -1,4 +1,4 @@
-:root {
+.root {
   --burgundy: #7a1f2d;
   --burgundy-dark: #5b1420;
   --burgundy-soft: #f3e7ea;
@@ -196,7 +196,8 @@ button:focus-visible {
 }
 
 .section-copy {
-  max-width: 760px;
+  width: 100%;
+  max-width: none;
   margin: 0;
   text-align: left;
 }
