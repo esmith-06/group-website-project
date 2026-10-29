@@ -8,129 +8,913 @@
       content="Nine and Wine at Cedar Pointe Golf Course in Boone, Iowa. Book your tee time for a night out on the course with wine, pizza, and live patio entertainment."
     />
     <title>Cedar Pointe Golf Course | Nine and Wine</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        --burgundy: #7a1f2d;
+        --burgundy-dark: #5b1420;
+        --burgundy-soft: #f3e7ea;
+        --black: #171717;
+        --white: #ffffff;
+        --muted: #555555;
+        --light-bg: #f5f4f1;
+        --border: #dfdad5;
+        --nav-hover: #e9d8dc;
+        --success-bg: #f2f7f0;
+        --success-border: #cfe3d0;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body.landing-page-rebuild-body {
+        margin: 0;
+        background: var(--light-bg);
+        color: var(--black);
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .landing-page-rebuild .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .landing-page-rebuild .topbar {
+        background: var(--white);
+        border-bottom: 1px solid #d8d8d8;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        position: static;
+        z-index: 1;
+      }
+
+      .landing-page-rebuild .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 88px;
+      }
+
+      .landing-page-rebuild .logo {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+      }
+
+      .landing-page-rebuild .logo img {
+        height: 58px;
+        width: auto;
+        max-width: 220px;
+        object-fit: contain;
+      }
+
+      .landing-page-rebuild .top-nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .landing-page-rebuild .top-nav a {
+        text-decoration: none;
+        color: #2d2d2d;
+        font-weight: 700;
+        padding: 10px 16px;
+        border-radius: 8px;
+        transition: background-color 0.18s ease, color 0.18s ease;
+      }
+
+      .landing-page-rebuild .top-nav a:hover,
+      .landing-page-rebuild .top-nav a:focus-visible,
+      .landing-page-rebuild .top-nav a.active {
+        background: var(--nav-hover);
+        color: var(--burgundy-dark);
+      }
+
+      .landing-page-rebuild .top-nav a:focus-visible,
+      .landing-page-rebuild .primary-button:focus-visible,
+      .landing-page-rebuild summary:focus-visible,
+      .landing-page-rebuild input:focus-visible,
+      .landing-page-rebuild select:focus-visible,
+      .landing-page-rebuild a:focus-visible,
+      .landing-page-rebuild button:focus-visible {
+        outline: 3px solid #1d63b0;
+        outline-offset: 2px;
+      }
+
+      .landing-page-rebuild .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .landing-page-rebuild main {
+        background: var(--white);
+      }
+
+      .landing-page-rebuild .content-shell {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 46px 20px 28px;
+      }
+
+      .landing-page-rebuild .hero {
+        position: relative;
+        background: #f5efe3;
+        overflow: hidden;
+      }
+
+      .landing-page-rebuild .hero-artwork {
+        position: relative;
+        width: 100%;
+        background: #f5efe3;
+      }
+
+      .landing-page-rebuild .hero-image {
+        display: block;
+        width: 100%;
+        height: clamp(260px, 30vw, 440px);
+        object-fit: cover;
+        object-position: center 32%;
+        background: #f5efe3;
+      }
+
+      .landing-page-rebuild .primary-button {
+        display: inline-block;
+        padding: 15px 28px;
+        border: none;
+        border-radius: 999px;
+        background: var(--burgundy);
+        color: var(--white);
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        box-shadow: 0 8px 16px rgba(122, 31, 45, 0.2);
+        min-height: 44px;
+        transform: none;
+      }
+
+      .landing-page-rebuild .primary-button:hover,
+      .landing-page-rebuild .primary-button:focus-visible {
+        background: var(--burgundy-dark);
+        color: var(--white);
+        transform: none;
+      }
+
+      .landing-page-rebuild .primary-button:active {
+        transform: none;
+      }
+
+      .landing-page-rebuild .hero-cta {
+        position: absolute;
+        left: 24%;
+        bottom: 10%;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+
+      .landing-page-rebuild .hero-cta:hover,
+      .landing-page-rebuild .hero-cta:focus-visible,
+      .landing-page-rebuild .hero-cta:active {
+        transform: translateX(-50%);
+      }
+
+      .landing-page-rebuild .content-block {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .landing-page-rebuild h2,
+      .landing-page-rebuild h3 {
+        color: var(--burgundy);
+      }
+
+      .landing-page-rebuild .intro-section h2,
+      .landing-page-rebuild .booking-section h2,
+      .landing-page-rebuild .experience-section h2,
+      .landing-page-rebuild .faq-section h2,
+      .landing-page-rebuild .location-section h2 {
+        margin-bottom: 18px;
+        font-size: clamp(1.9rem, 3vw, 2.6rem);
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+      .landing-page-rebuild .intro-copy {
+        margin: 0;
+        text-align: left;
+      }
+
+      .landing-page-rebuild .intro-details {
+        margin-top: 10px;
+      }
+
+      .landing-page-rebuild .intro-details p,
+      .landing-page-rebuild .intro-copy p,
+      .landing-page-rebuild .booking-copy p,
+      .landing-page-rebuild .location-block p,
+      .landing-page-rebuild .experience-card p,
+      .landing-page-rebuild .faq-list p,
+      .landing-page-rebuild .booking-note,
+      .landing-page-rebuild .pricing-note,
+      .landing-page-rebuild .demo-note,
+      .landing-page-rebuild .golf-subtotal,
+      .landing-page-rebuild .payment-note,
+      .landing-page-rebuild .fine-note,
+      .landing-page-rebuild .additional-note {
+        color: var(--black);
+      }
+
+      .landing-page-rebuild .intro-details p,
+      .landing-page-rebuild .intro-copy p,
+      .landing-page-rebuild .booking-copy p,
+      .landing-page-rebuild .pricing-block p,
+      .landing-page-rebuild .fine-note,
+      .landing-page-rebuild .booking-note,
+      .landing-page-rebuild .payment-note,
+      .landing-page-rebuild .golf-subtotal,
+      .landing-page-rebuild .additional-note,
+      .landing-page-rebuild .demo-note {
+        margin-bottom: 12px;
+      }
+
+      .landing-page-rebuild .intro-details p {
+        font-weight: 700;
+        line-height: 1.7;
+        margin-bottom: 4px;
+      }
+
+      .landing-page-rebuild .intro-copy .note {
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      .landing-page-rebuild .booking-section {
+        padding-top: 30px;
+      }
+
+      .landing-page-rebuild .booking-copy {
+        margin-bottom: 20px;
+      }
+
+      .landing-page-rebuild .pricing-block {
+        max-width: 760px;
+        margin: 0 auto 26px;
+        padding: 18px 20px;
+        background: var(--burgundy-soft);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+      }
+
+      .landing-page-rebuild .pricing-block p {
+        margin-bottom: 6px;
+      }
+
+      .landing-page-rebuild .booking-form {
+        max-width: 760px;
+        margin: 0 auto;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px 20px 18px;
+      }
+
+      .landing-page-rebuild .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .landing-page-rebuild .field-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .landing-page-rebuild .field-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 700;
+        color: var(--black);
+      }
+
+      .landing-page-rebuild .field-group input,
+      .landing-page-rebuild .field-group select {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid #bfbdba;
+        border-radius: 10px;
+        padding: 10px 12px;
+        background: var(--white);
+        color: var(--black);
+      }
+
+      .landing-page-rebuild .field-group input:invalid,
+      .landing-page-rebuild .field-group select:invalid {
+        box-shadow: none;
+      }
+
+      .landing-page-rebuild .fine-note {
+        font-style: italic;
+      }
+
+      .landing-page-rebuild .golf-subtotal {
+        font-weight: 700;
+        min-height: 24px;
+      }
+
+      .landing-page-rebuild .additional-note {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .landing-page-rebuild .booking-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+      }
+
+      .landing-page-rebuild .booking-submit {
+        min-width: 160px;
+      }
+
+      .landing-page-rebuild .demo-note {
+        font-size: 0.92rem;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+
+      .landing-page-rebuild .form-status {
+        display: none;
+        margin-top: 18px;
+        padding: 18px 20px;
+        border: 1px solid var(--success-border);
+        background: var(--success-bg);
+        border-radius: 12px;
+      }
+
+      .landing-page-rebuild .form-status.visible {
+        display: block;
+      }
+
+      .landing-page-rebuild .form-status h3 {
+        margin-bottom: 10px;
+        font-size: clamp(1.3rem, 2vw, 1.8rem);
+      }
+
+      .landing-page-rebuild .form-status p {
+        margin-bottom: 8px;
+      }
+
+      .landing-page-rebuild .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 18px;
+      }
+
+      .landing-page-rebuild .experience-card {
+        background: #faf9f8;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 24px 18px;
+      }
+
+      .landing-page-rebuild .experience-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.25rem;
+        color: var(--burgundy);
+      }
+
+      .landing-page-rebuild .faq-list {
+        display: grid;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .landing-page-rebuild .faq-list details {
+        background: #faf9f8;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .landing-page-rebuild .faq-list summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 20px;
+        font-weight: 700;
+        color: var(--black);
+        position: relative;
+      }
+
+      .landing-page-rebuild .faq-list summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .landing-page-rebuild .faq-list summary::after {
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid var(--burgundy);
+        border-bottom: 2px solid var(--burgundy);
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        transition: transform 0.2s ease;
+      }
+
+      .landing-page-rebuild .faq-list details[open] summary::after {
+        transform: translateY(-50%) rotate(225deg);
+      }
+
+      .landing-page-rebuild .faq-list p {
+        padding: 0 20px 18px;
+        color: var(--muted);
+      }
+
+      .landing-page-rebuild .faq-list a {
+        color: var(--burgundy);
+        text-decoration: underline;
+      }
+
+      .landing-page-rebuild .location-block {
+        margin-top: 18px;
+        font-size: 1.05rem;
+      }
+
+      .landing-page-rebuild .location-block p {
+        margin-bottom: 4px;
+      }
+
+      .landing-page-rebuild .phone-link,
+      .landing-page-rebuild .map-link {
+        color: var(--burgundy);
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      .landing-page-rebuild .location-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .landing-page-rebuild .location-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .landing-page-rebuild .site-footer {
+        background: #f2f2f2;
+        border-top: 1px solid #d4d4d4;
+        color: #2a2a2a;
+        padding: 22px 0;
+      }
+
+      .landing-page-rebuild .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .landing-page-rebuild .site-footer nav {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .landing-page-rebuild .site-footer nav a {
+        text-decoration: none;
+      }
+
+      .landing-page-rebuild #book-your-tee-time {
+        scroll-margin-top: 92px;
+      }
+
+      @media (max-width: 700px) {
+        .landing-page-rebuild .header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          padding-top: 14px;
+          padding-bottom: 14px;
+        }
+
+        .landing-page-rebuild .top-nav {
+          gap: 8px;
+        }
+
+        .landing-page-rebuild .field-row,
+        .landing-page-rebuild .experience-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .landing-page-rebuild .hero-image {
+          height: clamp(200px, 42vw, 300px);
+          object-position: center 28%;
+        }
+
+        .landing-page-rebuild .content-shell {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .landing-page-rebuild .booking-form {
+          padding: 18px 16px 14px;
+        }
+
+        .landing-page-rebuild .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .landing-page-rebuild .hero-image {
+          width: 100%;
+          max-width: 100%;
+          height: clamp(180px, 52vw, 260px);
+          object-position: center 22%;
+        }
+
+        .landing-page-rebuild .hero-cta {
+          position: static;
+          left: auto;
+          bottom: auto;
+          display: block;
+          width: max-content;
+          margin: 18px auto 24px;
+          text-align: center;
+          transform: none;
+        }
+
+        .landing-page-rebuild .hero-cta:hover,
+        .landing-page-rebuild .hero-cta:focus-visible,
+        .landing-page-rebuild .hero-cta:active {
+          transform: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <header class="topbar">
-      <div class="container header-inner">
-        <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
-          <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
-        </a>
+  <body class="landing-page-rebuild-body">
+    <div class="landing-page-rebuild">
+      <header class="topbar">
+        <div class="container header-inner">
+          <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
+            <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
+          </a>
 
-        <nav class="top-nav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="ad-page.html">Ad Page</a>
-          <a href="landing-page.html" class="active">Landing Page</a>
-        </nav>
-      </div>
-    </header>
-
-    <main class="event-page">
-      <section class="hero" aria-label="Nine and Wine event hero image">
-        <h1 class="sr-only">Nine and Wine.</h1>
-        <div class="hero-image-wrap">
-          <img
-            class="hero-image"
-            src="landingpagehero.jpg"
-            alt="Your Night Out. Your Kind of Fun. Cedar Pointe golf course event banner."
-          />
-          <a class="primary-button hero-cta" href="#book-your-tee-time">Book Now</a>
+          <nav class="top-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="ad-page.html">Ad Page</a>
+            <a href="landing-page.html" class="active">Landing Page</a>
+          </nav>
         </div>
-      </section>
+      </header>
 
-      <section class="content-shell intro-section">
-        <div class="section-copy">
-          <h2>A Night Out on the Course</h2>
-          <p class="event-detail">Thursday, April 22, 2027</p>
-          <p class="event-detail">Cedar Pointe Golf Course | Boone, Iowa</p>
-          <p class="event-detail">Tee times: 4–6:30 p.m.</p>
-          <p class="event-detail">Food, wine &amp; live patio entertainment until 10 p.m.</p>
+      <main>
+        <section class="hero" aria-label="Nine and Wine hero art">
+          <h1 class="sr-only">Nine and Wine</h1>
+          <div class="hero-artwork">
+            <img
+              class="hero-image"
+              src="landingpagehero.jpg"
+              alt="Nine and Wine. Your Night Out. Your Kind of Fun."
+            />
+            <a class="primary-button hero-cta" href="#book-your-tee-time">Book Now</a>
+          </div>
+        </section>
 
-          <p>
-            Grab your friends and join us for Nine and Wine, a monthly night out bringing women in
-            our community together on the course. Enjoy an evening of golf and live entertainment on
-            the patio. Wine will be available for purchase, along with pizza from Bellucci Pizza House
-            in Boone. Unwind, meet new friends, and make a night of it.
-          </p>
-
-          <p class="note">
-            Golf is available as daylight allows. Stay afterward for food, wine, and live patio
-            entertainment until 10 p.m.
-          </p>
-        </div>
-      </section>
-
-      <section id="book-your-tee-time" class="content-shell booking-section">
-        <div class="booking-copy">
-          <h2>Book Your Tee Time</h2>
-          <p>Choose your tee time, gather your group, and join us for a night out.</p>
-        </div>
-
-        <div class="pricing-block" aria-label="Event pricing information">
-          <p>Golf: $24 per person</p>
-          <p>Optional cart rental: $15 per rider</p>
-          <p>Food and wine sold separately.</p>
-          <p class="pricing-note">Golf subtotal: $24 × number of golfers</p>
-        </div>
-
-        <form id="booking-form" class="booking-form" novalidate>
-          <div class="field-row">
-            <div class="field-group">
-              <label for="full-name">Full name</label>
-              <input id="full-name" name="fullName" type="text" autocomplete="name" required />
+        <section class="content-shell intro-section" aria-labelledby="intro-heading">
+          <div class="intro-copy">
+            <h2 id="intro-heading">A Night Out on the Course</h2>
+            <div class="intro-details">
+              <p>Thursday, April 22, 2027</p>
+              <p>Cedar Pointe Golf Course | Boone, Iowa</p>
+              <p>Tee times: 4–6:30 p.m.</p>
+              <p>Food, wine &amp; live patio entertainment until 10 p.m.</p>
             </div>
 
-            <div class="field-group">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
+            <p>
+              Grab your friends and join us for Nine and Wine, a monthly night out bringing women in
+              our community together on the course. Enjoy an evening of golf and live entertainment on
+              the patio. Wine will be available for purchase, along with pizza from Bellucci Pizza House
+              in Boone. Unwind, meet new friends, and make a night of it.
+            </p>
+
+            <p class="note">
+              Golf is available as daylight allows. Stay afterward for food, wine, and live patio
+              entertainment until 10 p.m.
+            </p>
+          </div>
+        </section>
+
+        <section id="book-your-tee-time" class="content-shell booking-section" aria-labelledby="booking-heading">
+          <div class="booking-copy">
+            <h2 id="booking-heading">Book Your Tee Time</h2>
+            <p>Choose your tee time, gather your group, and join us for a night out.</p>
           </div>
 
-          <div class="field-row">
-            <div class="field-group">
-              <label for="phone">Phone number</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" />
-            </div>
-
-            <div class="field-group blank-field" aria-hidden="true"></div>
+          <div class="pricing-block" aria-label="Event pricing information">
+            <p>9 holes: $24 per person</p>
+            <p>Optional cart rental: $15 per rider</p>
+            <p>Wine and pizza are available for purchase separately.</p>
+            <p class="pricing-note">Pricing is based on Cedar Pointe’s published 2026 weekday rates.</p>
           </div>
 
-          <div class="field-row booking-selects">
-            <div class="field-group">
-              <label for="tee-time">Tee time</label>
-              <select id="tee-time" name="teeTime" required>
-                <option value="" selected disabled>Select a tee time</option>
-                <option value="4:00 p.m.">4:00 p.m.</option>
-                <option value="4:10 p.m.">4:10 p.m.</option>
-                <option value="4:20 p.m.">4:20 p.m.</option>
-                <option value="4:30 p.m.">4:30 p.m.</option>
-                <option value="4:40 p.m.">4:40 p.m.</option>
-                <option value="4:50 p.m.">4:50 p.m.</option>
-                <option value="5:00 p.m.">5:00 p.m.</option>
-                <option value="5:10 p.m.">5:10 p.m.</option>
-                <option value="5:20 p.m.">5:20 p.m.</option>
-                <option value="5:30 p.m.">5:30 p.m.</option>
-                <option value="5:40 p.m.">5:40 p.m.</option>
-                <option value="5:50 p.m.">5:50 p.m.</option>
-                <option value="6:00 p.m.">6:00 p.m.</option>
-                <option value="6:10 p.m.">6:10 p.m.</option>
-                <option value="6:20 p.m.">6:20 p.m.</option>
-                <option value="6:30 p.m.">6:30 p.m.</option>
-              </select>
+          <form id="booking-form" class="booking-form" novalidate>
+            <div class="field-row">
+              <div class="field-group">
+                <label for="full-name">Full name</label>
+                <input id="full-name" name="fullName" type="text" autocomplete="name" required />
+              </div>
+
+              <div class="field-group">
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
             </div>
 
-            <div class="field-group">
-              <label for="group-size">Number of golfers</label>
-              <select id="group-size" name="groupSize" required>
-                <option value="" selected disabled>Select group size</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
+            <div class="field-row">
+              <div class="field-group">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+
+              <div class="field-group" aria-hidden="true"></div>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="tee-time">Tee time</label>
+                <select id="tee-time" name="teeTime" required>
+                  <option value="" selected disabled>Select a tee time</option>
+                  <option value="4:00 p.m.">4:00 p.m.</option>
+                  <option value="4:10 p.m.">4:10 p.m.</option>
+                  <option value="4:20 p.m.">4:20 p.m.</option>
+                  <option value="4:30 p.m.">4:30 p.m.</option>
+                  <option value="4:40 p.m.">4:40 p.m.</option>
+                  <option value="4:50 p.m.">4:50 p.m.</option>
+                  <option value="5:00 p.m.">5:00 p.m.</option>
+                  <option value="5:10 p.m.">5:10 p.m.</option>
+                  <option value="5:20 p.m.">5:20 p.m.</option>
+                  <option value="5:30 p.m.">5:30 p.m.</option>
+                  <option value="5:40 p.m.">5:40 p.m.</option>
+                  <option value="5:50 p.m.">5:50 p.m.</option>
+                  <option value="6:00 p.m.">6:00 p.m.</option>
+                  <option value="6:10 p.m.">6:10 p.m.</option>
+                  <option value="6:20 p.m.">6:20 p.m.</option>
+                  <option value="6:30 p.m.">6:30 p.m.</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label for="group-size">Number of golfers</label>
+                <select id="group-size" name="groupSize" required>
+                  <option value="" selected disabled>Select group size</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="fine-note">
+              Carts are available to rent for $15 per rider. Please request one when you check in for
+              your tee time.
+            </p>
+
+            <div id="golf-subtotal" class="golf-subtotal" aria-live="polite">
+              Select your group size to see your golf subtotal.
+            </div>
+
+            <p class="additional-note">Cart rental, food, and wine are additional.</p>
+            <p class="payment-note">
+              Payment is due in the clubhouse when you check in for your tee time. No online payment is
+              required.
+            </p>
+
+            <div class="booking-actions">
+              <button type="submit" class="primary-button booking-submit">Book Now</button>
+            </div>
+
+            <p class="demo-note">Demo booking form. No real reservations or emails will be sent.</p>
+
+            <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true">
+              <h3>You’re on the list!</h3>
+              <div id="status-body"></div>
+            </div>
+          </form>
+        </section>
+
+        <section class="content-shell experience-section" aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Make It Your Night</h2>
+
+          <div class="experience-grid">
+            <article class="experience-card">
+              <h3>Time on the Course</h3>
+              <p>Bring your friends for an evening round, with tee times available from 4–6:30 p.m. Play as daylight allows.</p>
+            </article>
+
+            <article class="experience-card">
+              <h3>Wine &amp; Pizza</h3>
+              <p>Enjoy wine and pizza available for purchase, with pizza from Bellucci Pizza House in Boone.</p>
+            </article>
+
+            <article class="experience-card">
+              <h3>Live on the Patio</h3>
+              <p>Keep the evening going with live patio entertainment, food, and wine until 10 p.m.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-shell faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Before You Head Out</h2>
+
+          <div class="faq-list">
+            <details>
+              <summary>What does the golf price include?</summary>
+              <p>The $24 per-person price covers the nine-hole greens fee. Cart rental is an additional $15 per rider. Wine and pizza are sold separately.</p>
+            </details>
+
+            <details>
+              <summary>How many people can I book for?</summary>
+              <p>You can book for one to four golfers using the reservation form.</p>
+            </details>
+
+            <details>
+              <summary>How late can we golf?</summary>
+              <p>Tee times run from 4–6:30 p.m., and play is limited by available daylight. Food, wine, and live patio entertainment continue until 10 p.m.</p>
+            </details>
+
+            <details>
+              <summary>Do I need to reserve a cart?</summary>
+              <p>Please request a cart when you check in. Rental is $15 per rider, with a maximum of two riders per cart.</p>
+            </details>
+
+            <details>
+              <summary>When do I pay?</summary>
+              <p>Please pay in the clubhouse when you check in for your tee time. No online payment is required.</p>
+            </details>
+
+            <details>
+              <summary>Who should I contact with questions?</summary>
+              <p>Contact Cedar Pointe Golf Course at <a href="tel:+15154326002">(515) 432-6002</a>.</p>
+            </details>
+          </div>
+        </section>
+
+        <section class="content-shell location-section" aria-labelledby="location-heading">
+          <h2 id="location-heading">Meet Us at Cedar Pointe</h2>
+
+          <div class="location-block">
+            <p>Cedar Pointe Golf Course</p>
+            <p>601 South Cedar Street</p>
+            <p>Boone, IA 50036</p>
+            <p><a class="phone-link" href="tel:+15154326002">(515) 432-6002</a></p>
+
+            <div class="location-actions">
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cedar+Pointe+Golf+Course+601+South+Cedar+Street+Boone+IA+50036" target="_blank" rel="noreferrer">Get Directions</a>
+              <a class="primary-button location-button" href="#book-your-tee-time">Book Your Tee Time</a>
             </div>
           </div>
+        </section>
+      </main>
 
-          <p class="fine-note">
-            Carts are available to rent for $
-
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <span>© Cedar Pointe Golf Course</span>
+          <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="ad-page.html">Ad Page</a>
+            <a href="landing-page.html">Landing Page</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        const form = document.getElementById('booking-form');
+        const groupSize = document.getElementById('group-size');
+        const subtotalEl = document.getElementById('golf-subtotal');
+        const statusEl = document.getElementById('form-status');
+        const statusBody = document.getElementById('status-body');
+
+        function updateSubtotal() {
+          const selectedGroupSize = Number(groupSize.value);
+
+          if (!selectedGroupSize) {
+            subtotalEl.textContent = 'Select your group size to see your golf subtotal.';
+            return;
+          }
+
+          const subtotal = 24 * selectedGroupSize;
+          subtotalEl.textContent = 'Golf subtotal: $' + subtotal;
+        }
+
+        groupSize.addEventListener('change', updateSubtotal);
+        updateSubtotal();
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const fullName = document.getElementById('full-name').value.trim();
+          const firstName = fullName.split(/\s+/).filter(Boolean)[0] || fullName;
+          const email = document.getElementById('email').value.trim();
+          const selectedTime = document.getElementById('tee-time').value;
+          const selectedCount = Number(groupSize.value);
+          const subtotal = 24 * selectedCount;
+          const golferText = selectedCount === 1 ? '1 golfer' : selectedCount + ' golfers';
+
+          statusBody.replaceChildren();
+
+          const line1 = document.createElement('p');
+          line1.textContent =
+            'Thanks, ' +
+            firstName +
+            '! Your demo reservation is for ' +
+            golferText +
+            ' at ' +
+            selectedTime +
+            ' on Thursday, April 22, 2027.';
+          statusBody.appendChild(line1);
+
+          const line2 = document.createElement('p');
+          line2.textContent =
+            'Golf subtotal: $' + subtotal + '. Cart rental, food, and wine are additional.';
+          statusBody.appendChild(line2);
+
+          const line3 = document.createElement('p');
+          line3.textContent = 'Please pay in the clubhouse when you check in for your tee time.';
+          statusBody.appendChild(line3);
+
+          const line4 = document.createElement('p');
+          line4.textContent =
+            'In a live booking system, a confirmation email would be sent to ' +
+            email +
+            '. This demo does not send emails or reserve a tee time.';
+          statusBody.appendChild(line4);
+
+          statusEl.classList.add('visible');
+          statusEl.setAttribute('aria-live', 'polite');
+        });
+      })();
+    </script>
+  </body>
+</html>
