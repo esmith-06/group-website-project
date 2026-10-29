@@ -131,9 +131,9 @@ main {
 .hero-image {
   display: block;
   width: 100%;
-  height: clamp(340px, 42vw, 620px);
+  height: clamp(260px, 34vw, 490px);
   object-fit: cover;
-  object-position: center 28%;
+  object-position: center 26%;
   max-width: 100%;
   background: #f5efe3;
 }
@@ -189,7 +189,7 @@ button:focus-visible {
 .hero-cta {
   position: absolute;
   left: 50%;
-  bottom: 12%;
+  bottom: 10%;
   transform: translateX(-50%);
   z-index: 2;
 }
@@ -241,7 +241,8 @@ button:focus-visible {
 .fine-note,
 .pricing-note,
 .note,
-.event-detail {
+.event-detail,
+.payment-note {
   color: var(--black);
 }
 
@@ -252,6 +253,7 @@ button:focus-visible {
 .pricing-block p,
 .fine-note,
 .additional-note,
+.payment-note,
 .golf-subtotal {
   margin-bottom: 12px;
 }
@@ -341,6 +343,10 @@ button:focus-visible {
 .additional-note {
   color: var(--muted);
   font-style: italic;
+}
+
+.payment-note {
+  color: var(--black);
 }
 
 .demo-note {
@@ -499,7 +505,7 @@ button:focus-visible {
   }
 
   .hero-image {
-    height: clamp(270px, 56vw, 440px);
+    height: clamp(220px, 48vw, 360px);
     object-position: center 24%;
   }
 
@@ -532,7 +538,7 @@ button:focus-visible {
   .hero-image {
     width: 100%;
     max-width: 100%;
-    height: clamp(260px, 72vw, 420px);
+    height: clamp(200px, 60vw, 320px);
     object-position: center 20%;
   }
 
