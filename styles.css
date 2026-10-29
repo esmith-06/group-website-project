@@ -1,13 +1,33 @@
+:root {
+  --burgundy: #7a1f2d;
+  --burgundy-dark: #5b1420;
+  --burgundy-soft: #f3e7ea;
+  --black: #171717;
+  --white: #ffffff;
+  --muted: #555555;
+  --light-bg: #f5f4f1;
+  --border: #dfdad5;
+  --nav-hover: #e9d8dc;
+  --success-bg: #f2f7f0;
+  --success-border: #cfe3d0;
+  --shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  color: #1f1f1f;
+  background: var(--light-bg);
+  color: var(--black);
+  line-height: 1.6;
 }
 
 img {
@@ -15,13 +35,23 @@ img {
   display: block;
 }
 
+a {
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
 .topbar {
   position: sticky;
   top: 0;
-  background: #ffffff;
+  background: var(--white);
   border-bottom: 1px solid #d8d8d8;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  z-index: 100;
 }
 
 .container {
@@ -63,72 +93,370 @@ img {
   font-weight: 700;
   padding: 10px 16px;
   border-radius: 8px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
 .top-nav a:hover,
 .top-nav a.active {
-  background: #b7d57a;
-  color: #234d1d;
+  background: var(--nav-hover);
+  color: var(--burgundy-dark);
 }
 
 main {
-  max-width: 1200px;
-  margin: 30px auto 60px;
-  padding: 0 20px;
+  max-width: 100%;
 }
 
-.page-section {
-  background: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 12px;
-  padding: 30px;
-  margin-bottom: 22px;
+.event-page {
+  background: var(--white);
 }
 
-.home-banner {
-  background: linear-gradient(135deg, #dfeaf7, #f5f7fa);
-  border: 1px solid #d4dfe9;
-  border-radius: 12px;
-  min-height: 260px;
+.hero {
+  position: relative;
+  min-height: 390px;
+  background-image: url("cedarpointegolfcourse.jpg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #566d82;
-  font-size: clamp(1.1rem, 2vw, 2rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 22px;
+  overflow: hidden;
 }
 
-h1, h2 {
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.38);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--white);
+  max-width: 740px;
+  padding: 24px 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2.35rem, 4vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
   margin-bottom: 12px;
 }
 
-p {
-  line-height: 1.7;
-  margin-bottom: 10px;
+.tagline {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 600;
+  margin-bottom: 22px;
 }
 
-.cta-row {
+.primary-button {
+  display: inline-block;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--burgundy);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 8px 16px rgba(122, 31, 45, 0.2);
+}
+
+.primary-button:hover,
+.primary-button:focus-visible {
+  background: var(--burgundy-dark);
+  transform: translateY(-1px);
+}
+
+.primary-button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #1d63b0;
+  outline-offset: 2px;
+}
+
+.content-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 46px 20px 28px;
+}
+
+.intro-section,
+.booking-section,
+.highlights-section,
+.faq-section,
+.location-section {
+  background: var(--white);
+}
+
+.section-copy {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.section-copy h2,
+.booking-copy h2,
+.highlights-section h2,
+.faq-section h2,
+.location-section h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  color: var(--black);
+}
+
+.section-copy p,
+.booking-copy p,
+.location-block p,
+.highlight-card p,
+.faq-list p,
+.additional-note,
+.fine-note,
+.pricing-note,
+.note,
+.event-detail {
+  color: var(--black);
+}
+
+.section-copy p,
+.note,
+.event-detail,
+.booking-copy p,
+.pricing-block p,
+.fine-note,
+.additional-note,
+.golf-subtotal {
+  margin-bottom: 12px;
+}
+
+.event-detail {
+  font-weight: 700;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.note {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.pricing-block {
+  max-width: 760px;
+  margin: 0 auto 26px;
+  padding: 18px 20px;
+  background: var(--burgundy-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.pricing-block p {
+  margin-bottom: 6px;
+}
+
+.booking-section {
+  padding-top: 30px;
+}
+
+.booking-form {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 20px 18px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.booking-selects {
+  grid-template-columns: 1fr 1fr;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.field-group input,
+.field-group select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #bfbdba;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--white);
+  color: var(--black);
+}
+
+.field-group input:invalid,
+.field-group select:invalid {
+  box-shadow: none;
+}
+
+.golf-subtotal {
+  font-weight: 700;
+  color: var(--black);
+  min-height: 24px;
+}
+
+.additional-note {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.demo-note {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.form-status {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border: 1px solid var(--success-border);
+  background: var(--success-bg);
+  border-radius: 12px;
+  display: none;
+}
+
+.form-status.visible {
+  display: block;
+}
+
+.form-status h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+.form-status p {
+  margin-bottom: 8px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
   margin-top: 18px;
 }
 
-.button-link {
-  display: inline-block;
-  text-decoration: none;
-  background: #7aa64e;
-  color: #ffffff;
-  font-weight: 700;
-  padding: 12px 18px;
-  border-radius: 8px;
+.highlight-card {
+  background: #faf9f8;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 18px;
 }
 
-.button-link.secondary {
-  background: #dfeecb;
-  color: #234d1d;
-  margin-left: 10px;
+.highlight-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: var(--burgundy);
+}
+
+.faq-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.faq-list details {
+  background: #faf9f8;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-list summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 20px;
+  font-weight: 700;
+  color: var(--black);
+  position: relative;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--burgundy);
+  border-bottom: 2px solid var(--burgundy);
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.faq-list details[open] summary::after {
+  transform: translateY(-50%) rotate(225deg);
+}
+
+.faq-list p {
+  padding: 0 20px 18px;
+  color: var(--muted);
+}
+
+.faq-list a {
+  color: var(--burgundy);
+  text-decoration: underline;
+}
+
+.location-block {
+  margin-top: 18px;
+  font-size: 1.05rem;
+}
+
+.map-link {
+  color: var(--burgundy);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.cta-row.centered {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.site-footer {
+  background: #f2f2f2;
+  border-top: 1px solid #d4d4d4;
+  color: #2a2a2a;
+  padding: 22px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#book-your-tee-time {
+  scroll-margin-top: 92px;
 }
 
 @media (max-width: 700px) {
@@ -143,7 +471,38 @@ p {
     gap: 8px;
   }
 
-  .page-section {
-    padding: 22px 18px;
+  .field-row,
+  .booking-selects,
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 330px;
+  }
+
+  .content-shell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .booking-form {
+    padding: 18px 16px 14px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
