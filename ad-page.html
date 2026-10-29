@@ -4,62 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Ads</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     :root {
-      /* Replace with the exact maroon from landing-page.html */
       --maroon: #800000;
-      --ad-gap: 24px;          /* space between stacked ads */
-      --rect-height: 250px;    /* medium rectangle height */
+      --ad-gap: 24px;
+      --rect-height: 250px;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: #fff;
+      background: #f5f4f1;
       color: #222;
-      font-family: inherit;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
     }
 
-    /* One-inch margin on the left and right of the screen */
     .page {
       padding: 32px 1in;
+      min-width: calc(300px + 300px + 400px + 96px + 2in);
     }
 
     .ad-link {
       display: block;
-      line-height: 0;   /* removes the gap under images */
+      line-height: 0;
     }
 
     .ad-link img {
       display: block;
     }
 
-    /* Leaderboard */
     .leaderboard {
       display: flex;
-      justify-content: flex-end;   /* top right, like the photo */
+      justify-content: center;
       margin-bottom: var(--ad-gap);
     }
+
     .leaderboard img { width: 728px; height: 90px; }
 
-    /* Three-column layout */
     .layout {
       display: grid;
-      grid-template-columns: 300px 1fr 300px;
+      grid-template-columns: 300px minmax(400px, 1fr) 300px;
       gap: 48px;
       align-items: start;
     }
 
-    /* Left column: half page, pushed down so its top lines up
-       with the top of the wide skyscraper on the right */
     .left-col {
       padding-top: calc(var(--rect-height) + var(--ad-gap));
     }
     .left-col img { width: 300px; height: 600px; }
 
-    /* Right column: medium rectangle with the skyscraper underneath */
     .right-col {
       display: flex;
       flex-direction: column;
@@ -69,33 +65,38 @@
     .right-col .medium-rect img { width: 300px; height: 250px; }
     .right-col .skyscraper img { width: 160px; height: 600px; }
 
-    /* Strategy text */
     .strategy h2 {
       color: var(--maroon);
-      font-family: "Times New Roman", Times, serif;
-      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
       margin: 0 0 12px;
     }
+
     .strategy section + section {
       margin-top: 56px;
     }
+
     .strategy p {
       margin: 0;
-    }
-
-    /* Always keep the side-by-side layout; never stack or overlap.
-       On narrow windows the page scrolls sideways instead. */
-    .page {
-      min-width: calc(300px + 300px + 400px + 96px + 2in);
-    }
-    .layout {
-      grid-template-columns: 300px minmax(400px, 1fr) 300px;
     }
   </style>
 </head>
 <body>
-  <main class="page">
+  <header class="topbar">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
+        <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
+      </a>
 
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="ad-page.html" class="active">Ad Page</a>
+        <a href="landing-page.html">Landing Page</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
     <div class="leaderboard">
       <a class="ad-link" href="landing-page.html">
         <img src="%28728%20x%2090%20px%29.png" alt="Leaderboard ad">
@@ -103,7 +104,6 @@
     </div>
 
     <div class="layout">
-
       <aside class="left-col">
         <a class="ad-link" href="landing-page.html">
           <img src="%28300%20x%20600%20px%29.png" alt="Half page ad">
@@ -141,7 +141,6 @@
           <img src="%28160%20x%20600%20px%29.png" alt="Wide skyscraper ad">
         </a>
       </aside>
-
     </div>
   </main>
 </body>
