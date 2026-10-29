@@ -29,7 +29,7 @@
       <section class="hero" aria-label="Nine and Wine event hero image">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <h1>Nine and Wine</h1>
+          <h1>NINE AND WINE</h1>
           <p class="tagline">Your Night Out. Your Kind of Fun.</p>
           <a class="primary-button" href="#book-your-tee-time">Book Your Tee Time</a>
         </div>
@@ -40,19 +40,19 @@
           <h2>A Night Out on the Course</h2>
           <p class="event-detail">Thursday, April 22, 2027</p>
           <p class="event-detail">Cedar Pointe Golf Course | Boone, Iowa</p>
-          <p class="event-detail">Tee times: 5–6 p.m.</p>
+          <p class="event-detail">Tee times: 4–6:30 p.m.</p>
           <p class="event-detail">Food, wine &amp; live patio entertainment until 10 p.m.</p>
 
           <p>
-            “Grab your friends and join us for Nine and Wine, a monthly night out bringing women in
+            Grab your friends and join us for Nine and Wine, a monthly night out bringing women in
             our community together on the course. Enjoy an evening of golf and live entertainment on
-            the patio. Wine and pizza will be available for purchase, with pizza provided by Bellucci
-            Pizza House in Boone. Unwind, meet new friends, and make a night of it.”
+            the patio. Wine will be available for purchase, along with pizza from Bellucci Pizza House
+            in Boone. Unwind, meet new friends, and make a night of it.
           </p>
 
           <p class="note">
-            “Golf is available as daylight allows. Stay afterward for food, wine, and live patio
-            entertainment until 10 p.m.”
+            Golf is available as daylight allows. Stay afterward for food, wine, and live patio
+            entertainment until 10 p.m.
           </p>
         </div>
       </section>
@@ -60,14 +60,14 @@
       <section id="book-your-tee-time" class="content-shell booking-section">
         <div class="booking-copy">
           <h2>Book Your Tee Time</h2>
-          <p>“Choose your tee time, gather your group, and join us for a night out.”</p>
+          <p>Choose your tee time, gather your group, and join us for a night out.</p>
         </div>
 
         <div class="pricing-block" aria-label="Event pricing information">
-          <p>“9 holes: $24 per person”</p>
-          <p>“Optional cart rental: $15 per rider”</p>
-          <p>“Wine and pizza are available for purchase separately.”</p>
-          <p class="pricing-note">“Pricing is based on Cedar Pointe’s published 2026 weekday rates.”</p>
+          <p>Golf: $24 per person</p>
+          <p>Optional cart rental: $15 per rider</p>
+          <p>Food and wine sold separately.</p>
+          <p class="pricing-note">Golf subtotal: $24 × number of golfers</p>
         </div>
 
         <form id="booking-form" class="booking-form" novalidate>
@@ -97,11 +97,22 @@
               <label for="tee-time">Tee time</label>
               <select id="tee-time" name="teeTime" required>
                 <option value="" selected disabled>Select a tee time</option>
+                <option value="4:00 p.m.">4:00 p.m.</option>
+                <option value="4:10 p.m.">4:10 p.m.</option>
+                <option value="4:20 p.m.">4:20 p.m.</option>
+                <option value="4:30 p.m.">4:30 p.m.</option>
+                <option value="4:40 p.m.">4:40 p.m.</option>
+                <option value="4:50 p.m.">4:50 p.m.</option>
                 <option value="5:00 p.m.">5:00 p.m.</option>
-                <option value="5:15 p.m.">5:15 p.m.</option>
+                <option value="5:10 p.m.">5:10 p.m.</option>
+                <option value="5:20 p.m.">5:20 p.m.</option>
                 <option value="5:30 p.m.">5:30 p.m.</option>
-                <option value="5:45 p.m.">5:45 p.m.</option>
+                <option value="5:40 p.m.">5:40 p.m.</option>
+                <option value="5:50 p.m.">5:50 p.m.</option>
                 <option value="6:00 p.m.">6:00 p.m.</option>
+                <option value="6:10 p.m.">6:10 p.m.</option>
+                <option value="6:20 p.m.">6:20 p.m.</option>
+                <option value="6:30 p.m.">6:30 p.m.</option>
               </select>
             </div>
 
@@ -118,19 +129,24 @@
           </div>
 
           <p class="fine-note">
-            “Carts are available to rent for $15 per rider. Please request one when you check in for
-            your tee time.”
+            Carts are available to rent for $15 per rider. Please request one when you check in for your
+            tee time.
           </p>
 
           <p id="golf-subtotal" class="golf-subtotal" aria-live="polite">
             Select your group size to see your golf subtotal.
           </p>
 
+          <p class="payment-note">
+            Payment is due in the clubhouse when you check in for your tee time. No online payment is
+            required.
+          </p>
+
           <p class="additional-note">Cart rental, food, and wine are additional.</p>
 
           <button type="submit" class="primary-button">Book Now</button>
 
-          <p class="demo-note">Demo booking form. No real reservations or emails will be sent.</p>
+          <p class="demo-note">Demo booking form. This demo does not send emails or create real reservations.</p>
 
           <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
         </form>
@@ -141,17 +157,17 @@
         <div class="highlights-grid">
           <article class="highlight-card">
             <h3>Time on the Course</h3>
-            <p>“Bring your friends for an evening round, with tee times available from 5–6 p.m. Play as daylight allows.”</p>
+            <p>Bring your friends for an evening round, with tee times available from 4–6:30 p.m. Play as daylight allows.</p>
           </article>
 
           <article class="highlight-card">
             <h3>Wine &amp; Pizza</h3>
-            <p>“Enjoy wine and pizza available for purchase, with pizza from Bellucci Pizza House in Boone.”</p>
+            <p>Enjoy wine and pizza available for purchase, with Bellucci Pizza House in Boone supplying the pizza.</p>
           </article>
 
           <article class="highlight-card">
             <h3>Live on the Patio</h3>
-            <p>“Keep the evening going with live patio entertainment, food, and wine until 10 p.m.”</p>
+            <p>Keep the evening going with live patio entertainment, food, and wine until 10 p.m.</p>
           </article>
         </div>
       </section>
@@ -162,27 +178,27 @@
         <div class="faq-list">
           <details>
             <summary>What does the golf price include?</summary>
-            <p>“The $24 per-person price covers the nine-hole greens fee. Cart rental is an additional $15 per rider. Wine and pizza are sold separately.”</p>
+            <p>The $24 per-person price covers the nine-hole greens fee. Cart rental is an additional $15 per rider. Wine and pizza are sold separately.</p>
           </details>
 
           <details>
             <summary>How many people can I book for?</summary>
-            <p>“You can book for one to four golfers using the reservation form.”</p>
+            <p>You can book for one to four golfers using the reservation form.</p>
           </details>
 
           <details>
             <summary>How late can we golf?</summary>
-            <p>“Tee times run from 5–6 p.m., and play is limited by available daylight. Food, wine, and live patio entertainment continue until 10 p.m.”</p>
+            <p>Tee times run from 4–6:30 p.m., and play is limited by available daylight. Food, wine, and live patio entertainment continue until 10 p.m.</p>
           </details>
 
           <details>
             <summary>Do I need to reserve a cart?</summary>
-            <p>“Please request a cart when you check in. Rental is $15 per rider, with a maximum of two riders per cart.”</p>
+            <p>Please request a cart when you check in. Rental is $15 per rider, with a maximum of two riders per cart.</p>
           </details>
 
           <details>
             <summary>Who should I contact with questions?</summary>
-            <p>“Contact Cedar Pointe Golf Course at <a href=\"tel:+15154326002\">(515) 432-6002</a>.”</p>
+            <p>Contact Cedar Pointe Golf Course at <a href="tel:+15154326002">(515) 432-6002</a>.</p>
           </details>
         </div>
       </section>
@@ -193,7 +209,7 @@
           <p>Cedar Pointe Golf Course</p>
           <p>601 South Cedar Street</p>
           <p>Boone, IA 50036</p>
-          <p>Phone: <a href=\"tel:+15154326002\">(515) 432-6002</a></p>
+          <p>Phone: <a href="tel:+15154326002">(515) 432-6002</a></p>
           <p>
             <a
               href="https://www.google.com/maps/search/?api=1&query=601+South+Cedar+Street+Boone+IA+50036"
@@ -257,7 +273,7 @@
         if (!email) {
           emailInput.setCustomValidity("Please enter your email address.");
         } else {
-          const emailPattern = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           emailInput.setCustomValidity(emailPattern.test(email) ? "" : "Please enter a valid email address.");
         }
 
@@ -283,10 +299,13 @@
         const confirmationTwo = document.createElement("p");
         confirmationTwo.textContent = `Golf subtotal: $${subtotal}. Cart rental, food, and wine are additional.`;
 
+        const confirmationPay = document.createElement("p");
+        confirmationPay.textContent = "Please pay in the clubhouse when you check in for your tee time.";
+
         const confirmationThree = document.createElement("p");
         confirmationThree.textContent = `In a live booking system, a confirmation email would be sent to ${email}. This demo does not send emails or reserve a tee time.`;
 
-        formStatus.append(heading, confirmationOne, confirmationTwo, confirmationThree);
+        formStatus.append(heading, confirmationOne, confirmationTwo, confirmationPay, confirmationThree);
 
         form.reset();
         updateSubtotal();
