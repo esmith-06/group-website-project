@@ -27,6 +27,7 @@
 
     <main class="event-page">
       <section class="hero" aria-label="Nine and Wine event hero image">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
           <h1>Nine and Wine</h1>
           <p class="tagline">Your Night Out. Your Kind of Fun.</p>
@@ -34,7 +35,7 @@
         </div>
       </section>
 
-      <section class="content-shell">
+      <section class="content-shell intro-section">
         <div class="section-copy">
           <h2>A Night Out on the Course</h2>
           <p class="event-detail">Thursday, April 22, 2027</p>
@@ -116,11 +117,19 @@
             </div>
           </div>
 
-          <p class="fine-note">“Carts are available to rent for $15 per rider. Please request one when you check in for your tee time.”</p>
-          <p id="golf-subtotal" class="golf-subtotal" aria-live="polite">Select your group size to see your golf subtotal.</p>
+          <p class="fine-note">
+            “Carts are available to rent for $15 per rider. Please request one when you check in for
+            your tee time.”
+          </p>
+
+          <p id="golf-subtotal" class="golf-subtotal" aria-live="polite">
+            Select your group size to see your golf subtotal.
+          </p>
+
           <p class="additional-note">Cart rental, food, and wine are additional.</p>
 
           <button type="submit" class="primary-button">Book Now</button>
+
           <p class="demo-note">Demo booking form. No real reservations or emails will be sent.</p>
 
           <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -173,7 +182,7 @@
 
           <details>
             <summary>Who should I contact with questions?</summary>
-            <p>“Contact Cedar Pointe Golf Course at <a href="tel:+15154326002">(515) 432-6002</a>.”</p>
+            <p>“Contact Cedar Pointe Golf Course at <a href=\"tel:+15154326002\">(515) 432-6002</a>.”</p>
           </details>
         </div>
       </section>
@@ -184,7 +193,7 @@
           <p>Cedar Pointe Golf Course</p>
           <p>601 South Cedar Street</p>
           <p>Boone, IA 50036</p>
-          <p>Phone: <a href="tel:+15154326002">(515) 432-6002</a></p>
+          <p>Phone: <a href=\"tel:+15154326002\">(515) 432-6002</a></p>
           <p>
             <a
               href="https://www.google.com/maps/search/?api=1&query=601+South+Cedar+Street+Boone+IA+50036"
@@ -210,19 +219,19 @@
     </footer>
 
     <script>
-      const form = document.getElementById('booking-form');
-      const groupSizeSelect = document.getElementById('group-size');
-      const teeTimeSelect = document.getElementById('tee-time');
-      const fullNameInput = document.getElementById('full-name');
-      const emailInput = document.getElementById('email');
-      const subtotalElement = document.getElementById('golf-subtotal');
-      const formStatus = document.getElementById('form-status');
+      const form = document.getElementById("booking-form");
+      const groupSizeSelect = document.getElementById("group-size");
+      const teeTimeSelect = document.getElementById("tee-time");
+      const fullNameInput = document.getElementById("full-name");
+      const emailInput = document.getElementById("email");
+      const subtotalElement = document.getElementById("golf-subtotal");
+      const formStatus = document.getElementById("form-status");
 
       function updateSubtotal() {
         const groupSize = Number(groupSizeSelect.value);
 
         if (!groupSize) {
-          subtotalElement.textContent = 'Select your group size to see your golf subtotal.';
+          subtotalElement.textContent = "Select your group size to see your golf subtotal.";
           return;
         }
 
@@ -231,12 +240,12 @@
       }
 
       function formatGroupText(groupSize) {
-        return groupSize === 1 ? '1 golfer' : `${groupSize} golfers`;
+        return groupSize === 1 ? "1 golfer" : `${groupSize} golfers`;
       }
 
-      groupSizeSelect.addEventListener('change', updateSubtotal);
+      groupSizeSelect.addEventListener("change", updateSubtotal);
 
-      form.addEventListener('submit', (event) => {
+      form.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const fullName = fullNameInput.value.trim();
@@ -244,17 +253,16 @@
         const teeTime = teeTimeSelect.value;
         const groupSize = Number(groupSizeSelect.value);
 
-        fullNameInput.setCustomValidity(fullName ? '' : 'Please enter your full name.');
-
+        fullNameInput.setCustomValidity(fullName ? "" : "Please enter your full name.");
         if (!email) {
-          emailInput.setCustomValidity('Please enter your email address.');
+          emailInput.setCustomValidity("Please enter your email address.");
         } else {
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          emailInput.setCustomValidity(emailPattern.test(email) ? '' : 'Please enter a valid email address.');
+          const emailPattern = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+          emailInput.setCustomValidity(emailPattern.test(email) ? "" : "Please enter a valid email address.");
         }
 
-        teeTimeSelect.setCustomValidity(teeTime ? '' : 'Please choose a tee time.');
-        groupSizeSelect.setCustomValidity(groupSize ? '' : 'Please choose a group size.');
+        teeTimeSelect.setCustomValidity(teeTime ? "" : "Please choose a tee time.");
+        groupSizeSelect.setCustomValidity(groupSize ? "" : "Please choose a group size.");
 
         if (!form.reportValidity()) {
           return;
@@ -263,19 +271,19 @@
         const firstName = fullName.split(/\s+/)[0];
         const subtotal = groupSize * 24;
 
-        formStatus.innerHTML = '';
-        formStatus.classList.add('visible');
+        formStatus.innerHTML = "";
+        formStatus.classList.add("visible");
 
-        const heading = document.createElement('h3');
-        heading.textContent = 'You’re on the list!';
+        const heading = document.createElement("h3");
+        heading.textContent = "You’re on the list!";
 
-        const confirmationOne = document.createElement('p');
+        const confirmationOne = document.createElement("p");
         confirmationOne.textContent = `Thanks, ${firstName}! Your demo reservation is for ${formatGroupText(groupSize)} at ${teeTime} on Thursday, April 22, 2027.`;
 
-        const confirmationTwo = document.createElement('p');
+        const confirmationTwo = document.createElement("p");
         confirmationTwo.textContent = `Golf subtotal: $${subtotal}. Cart rental, food, and wine are additional.`;
 
-        const confirmationThree = document.createElement('p');
+        const confirmationThree = document.createElement("p");
         confirmationThree.textContent = `In a live booking system, a confirmation email would be sent to ${email}. This demo does not send emails or reserve a tee time.`;
 
         formStatus.append(heading, confirmationOne, confirmationTwo, confirmationThree);
