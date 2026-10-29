@@ -68,8 +68,8 @@ img {
 
 .top-nav a:hover,
 .top-nav a.active {
-  background: #eef4ff;
-  color: #183a63;
+  background: #b7d57a;
+  color: #234d1d;
 }
 
 main {
@@ -118,7 +118,7 @@ p {
 .button-link {
   display: inline-block;
   text-decoration: none;
-  background: #183a63;
+  background: #7aa64e;
   color: #ffffff;
   font-weight: 700;
   padding: 12px 18px;
@@ -126,8 +126,8 @@ p {
 }
 
 .button-link.secondary {
-  background: #e8edf6;
-  color: #1a2d40;
+  background: #dfeecb;
+  color: #234d1d;
   margin-left: 10px;
 }
 
