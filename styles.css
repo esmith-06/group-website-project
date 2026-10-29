@@ -196,7 +196,7 @@ button:focus-visible {
 
 .section-copy {
   max-width: 760px;
-  margin: 0 auto;
+  margin: 0;
   text-align: left;
 }
 
@@ -208,7 +208,8 @@ button:focus-visible {
   margin-bottom: 18px;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   line-height: 1.2;
-  color: var(--black);
+  color: var(--burgundy);
+  font-weight: 700;
 }
 
 .section-copy p,
