@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Ad Campaign</title>
+    <style>
+      :root {
+        --green: #1d4d3f;
+        --green-dark: #163e32;
+        --white: #ffffff;
+        --light-bg: #f5f4f1;
+        --muted: #555555;
+        --border: #dfdad5;
+        --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--light-bg);
+        color: #1d1d1d;
+        line-height: 1.6;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .topbar {
+        background: var(--white);
+        border-bottom: 1px solid #d8d8d8;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 88px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 58px;
+        width: auto;
+        max-width: 220px;
+        object-fit: contain;
+      }
+
+      .home-link {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: var(--green);
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .home-link:hover,
+      .home-link:focus-visible {
+        background: var(--green-dark);
+      }
+
+      main {
+        padding: 48px 20px 64px;
+      }
+
+      .detail-page {
+        max-width: 980px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 36px 28px;
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--green);
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        margin-bottom: 28px;
+      }
+
+      .content-box {
+        min-height: 220px;
+        background: #f9f9f8;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px 20px;
+      }
+
+      .content-box p {
+        color: #2d2d2d;
+        font-size: 1.03rem;
+      }
+
+      @media (max-width: 600px) {
+        .header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          padding-top: 14px;
+          padding-bottom: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
+          <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
+        </a>
+        <a href="index.html" class="home-link">Home</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="detail-page" aria-labelledby="display-ad-campaign-title">
+        <h1 id="display-ad-campaign-title">Display Ad Campaign</h1>
+        <div class="content-box">
+          <p>
+            This is where we will later insert information about the display ad campaign assignment,
+            including the target audience, campaign goals, ad design process, and the work completed by
+            each team member.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
