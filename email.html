@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nine & Wine | Cedar Pointe Golf Course – Join the List</title>
+  <meta name="description" content="Be the first to know about Nine & Wine at Cedar Pointe Golf Course. Get early ticket access, event updates, and exclusive tips for your night out.">
+  
+  <!-- Google Fonts – clean, modern, approachable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CSS STYLING SYSTEM – Cedar Pointe / Nine & Wine
+       Shared base for the whole group
+       ============================================ */
+    :root {
+      /* Brand Colors */
+      --color-green-dark: #1a3c34;      /* Primary deep green */
+      --color-green: #2d5a4a;           /* Main brand green */
+      --color-green-light: #3d7a64;     /* Lighter green */
+      --color-cream: #f8f5f0;           /* Warm off-white background */
+      --color-cream-dark: #f0ebe3;      /* Slightly darker cream */
+      --color-gold: #c9a227;            /* Accent gold */
+      --color-gold-hover: #b8911f;
+      --color-white: #ffffff;
+      --color-text: #1f2a27;
+      --color-text-muted: #5a6a64;
+      --color-border: #d9d2c5;
+      --color-error: #c0392b;
+      --color-success: #27ae60;
+
+      /* Typography */
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+
+      /* Spacing & Layout */
+      --container-max: 1100px;
+      --section-padding: 4.5rem 1.5rem;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 8px 30px rgba(26, 60, 52, 0.12);
+      --shadow-lg: 0 20px 50px rgba(26, 60, 52, 0.18);
+
+      /* Transitions */
+      --transition: 0.2s ease;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background-color: var(--color-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--color-green);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a:hover {
+      color: var(--color-green-dark);
+    }
+
+    /* Utility */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    .site-header {
+      background: var(--color-green-dark);
+      color: var(--color-white);
+      padding: 0.85rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--color-white);
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      background: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .header-nav a {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: var(--color-white);
+    }
+
+    .header-cta {
+      background: var(--color-gold);
+      color: var(--color-green-dark) !important;
+      padding: 0.5rem 1.1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .header-cta:hover {
+      background: var(--color-gold-hover);
+      color: var(--color-green-dark) !important;
+    }
+
+    /* Mobile nav toggle (simple) */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    /* ============================================
+       HERO + SIGN-UP FORM (Above the fold)
+       ============================================ */
+    .hero {
+      background: linear-gradient(135deg, var(--color-green-dark) 0%, var(--color-green) 55%, #3a6b58 100%);
+      color: var(--color-white);
+      padding: 4rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle decorative elements */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 4.5vw, 2.85rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content .lead {
+      font-size: 1.15rem;
+      opacity: 0.92;
+      margin-bottom: 1.5rem;
+      max-width: 32ch;
+      line-height: 1.55;
+    }
+
+    .hero-benefits {
+      list-style: none;
+      margin-bottom: 0;
+    }
+
+    .hero-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.975rem;
+      opacity: 0.95;
+    }
+
+    .hero-benefits li::before {
+      content: '✓';
+      background: var(--color-gold);
+      color: var(--color-green-dark);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Form Card */
+    .form-card {
+      background: var(--color-white);
+      color: var(--color-text);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1.75rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .form-card h2 {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      color: var(--color-green-dark);
+      margin-bottom: 0.35rem;
+      line-height: 1.25;
+    }
+
+    .form-card .form-sub {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--color-text);
+    }
+
+    .required-tag {
+      color: var(--color-green);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+
+    .optional-tag {
+      color: var(--color-text-muted);
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--color-text);
+      background: var(--color-cream);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--color-green);
+      box-shadow: 0 0 0 3px rgba(45, 90, 74, 0.15);
+      background: var(--color-white);
+    }
+
+    .form-group input::placeholder {
+      color: #9a9a9a;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      background: var(--color-gold);
+      color: var(--color-green-dark);
+      border: none;
+      padding: 0.95rem 1.5rem;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      margin-top: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .cta-button:hover {
+      background: var(--color-gold-hover);
+      transform: translateY(-1px);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      margin-top: 1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .form-note a {
+      color: var(--color-green);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ============================================
+       SECTION PLACEHOLDERS (for group members)
+       ============================================ */
+    .section {
+      padding: var(--section-padding);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      color: var(--color-green-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Strategy Section Placeholder */
+    #strategy {
+      background: var(--color-white);
+    }
+
+    .placeholder-block {
+      background: var(--color-cream);
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--color-text-muted);
+    }
+
+    .placeholder-block h3 {
+      font-family: var(--font-serif);
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .placeholder-block p {
+      font-size: 0.95rem;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Mailbox Section Placeholder */
+    #mailbox {
+      background: var(--color-cream-dark);
+    }
+
+    /* ============================================
+       FOOTER (minimal base – Person 4 will expand)
+       ============================================ */
+    .site-footer {
+      background: var(--color-green-dark);
+      color: rgba(255,255,255,0.85);
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    .site-footer a {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .site-footer a:hover {
+      color: var(--color-gold);
+    }
+
+    .footer-brand {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-white);
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-content .lead {
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-benefits {
+        display: inline-block;
+        text-align: left;
+      }
+
+      .strategy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-nav {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 3rem 0 4rem;
+      }
+
+      .form-card {
+        padding: 1.5rem 1.25rem 1.4rem;
+      }
+
+      :root {
+        --section-padding: 3.5rem 1.25rem;
+      }
+    }
+
+    /* Focus styles for accessibility */
+    :focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark" aria-hidden="true">⛳</div>
+        <div class="logo-text">
+          Cedar Pointe
+          <span>Golf Course</span>
+        </div>
+      </a>
+
+      <nav class="header-nav" aria-label="Main">
+        <a href="#signup">Join the List</a>
+        <a href="#strategy">Our Strategy</a>
+        <a href="#mailbox">Email Preview</a>
+        <a href="#signup" class="header-cta">Get Early Access</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== HERO + SIGN-UP FORM (Person 1 deliverable) ========== -->
+  <section class="hero" id="signup">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left: Benefit copy -->
+        <div class="hero-content">
+          <h1>Your night out.<br>Your kind of fun.</h1>
+          <p class="lead">
+            Be first in line for <strong>Nine & Wine</strong> — the relaxed nine-hole evening with wine, pizza, and live music at Cedar Pointe.
+          </p>
+          <ul class="hero-benefits">
+            <li>Early access to the 72 limited tickets</li>
+            <li>Event reminders + what-to-expect tips</li>
+            <li>Exclusive updates from Cedar Pointe</li>
+          </ul>
+        </div>
+
+        <!-- Right: Sign-up Form -->
+        <div class="form-card">
+          <h2>Join the Nine & Wine List</h2>
+          <p class="form-sub">Get early ticket access and event updates. No spam — just the good stuff.</p>
+
+          <form action="#" method="POST" id="signup-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">
+                  First Name <span class="required-tag">(Required)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="first-name" 
+                  name="first_name" 
+                  placeholder="Alex" 
+                  required 
+                  autocomplete="given-name"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="last-name">
+                  Last Name <span class="optional-tag">(Optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="last-name" 
+                  name="last_name" 
+                  placeholder="Johnson" 
+                  autocomplete="family-name"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                Email Address <span class="required-tag">(Required)</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="you@example.com" 
+                required 
+                autocomplete="email"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="interest">
+                I’m most interested in… <span class="optional-tag">(Optional)</span>
+              </label>
+              <select id="interest" name="interest">
+                <option value="" selected disabled>Select one</option>
+                <option value="nine-and-wine">Nine & Wine tickets</option>
+                <option value="events">Other Cedar Pointe events</option>
+                <option value="general">General course updates</option>
+                <option value="all">All of the above</option>
+              </select>
+            </div>
+
+            <button type="submit" class="cta-button">
+              Get Early Access →
+            </button>
+
+            <p class="form-note">
+              By signing up you agree to receive emails from Cedar Pointe Golf Course. 
+              We’ll send a confirmation email (double opt-in) so you stay in control. 
+              Unsubscribe anytime. 
+              <a href="#">Privacy Policy</a>
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STRATEGY SECTION (Placeholder for Persons 2 & 3) ========== -->
+  <section class="section" id="strategy">
+    <div class="container">
+      <div class="section-header">
+        <h2>How We’ll Build the List</h2>
+        <p>Three distinct customer groups and the value we offer each one.</p>
+      </div>
+
+      <div class="strategy-grid">
+        <!-- Person 2 will replace these -->
+        <div class="placeholder-block">
+          <h3>Customer Group 1</h3>
+          <p>Person 2 owns this block.<br>Collection method · Immediate value · Long-term promise</p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Customer Group 2</h3>
+          <p>Person 2 owns this block.<br>Collection method · Immediate value · Long-term promise</p>
+        </div>
+        <!-- Person 3 owns Group 3 + visual polish -->
+        <div class="placeholder-block">
+          <h3>Customer Group 3</h3>
+          <p>Person 3 owns this block + overall middle-section cohesion and visual elements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAILBOX PREVIEW (Placeholder for Person 4) ========== -->
+  <section class="section" id="mailbox">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Subscribers Will Receive</h2>
+        <p>A realistic preview of the commercial email and branded footer.</p>
+      </div>
+
+      <div class="placeholder-block" style="min-height: 280px; display: flex; flex-direction: column; justify-content: center;">
+        <h3>Mailbox Preview + Branded Footer</h3>
+        <p>Person 4 (Lauren) owns this entire bottom section — commercial email design inside a realistic mailbox frame + complete branded footer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER (minimal base) ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-brand">Cedar Pointe Golf Course</p>
+      <p>601 S Cedar St, Boone, IA 50036 · (515) 432-6002</p>
+      <p style="margin-top: 0.75rem; opacity: 0.7;">
+        © 2026 Cedar Pointe Golf Course. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Simple form enhancement (no external libraries) -->
+  <script>
+    // Basic client-side validation feedback + success state for demo
+    const form = document.getElementById('signup-form');
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const firstName = document.getElementById('first-name');
+      const email = document.getElementById('email');
+      let valid = true;
+
+      // Simple required checks
+      if (!firstName.value.trim()) {
+        firstName.style.borderColor = 'var(--color-error)';
+        valid = false;
+      } else {
+        firstName.style.borderColor = '';
+      }
+
+      if (!email.value.trim() || !email.value.includes('@')) {
+        email.style.borderColor = 'var(--color-error)';
+        valid = false;
+      } else {
+        email.style.borderColor = '';
+      }
+
+      if (valid) {
+        // Demo success state – in real life this would submit to a service
+        const btn = form.querySelector('.cta-button');
+        btn.textContent = 'You’re on the list! ✓';
+        btn.style.background = 'var(--color-success)';
+        btn.style.color = 'white';
+        btn.disabled = true;
+        
+        // Optional: reset after a few seconds for demo purposes
+        setTimeout(() => {
+          btn.textContent = 'Get Early Access →';
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.disabled = false;
+          form.reset();
+        }, 3500);
+      }
+    });
+  </script>
+
+</body>
+</html>
