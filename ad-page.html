@@ -4,32 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Ads</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root { --maroon: #800000; --ad-gap: 24px; --rect-height: 250px; }
+    :root {
+      --maroon: #800000;
+      --ad-gap: 24px;
+      --rect-height: 250px;
+    }
+
     * { box-sizing: border-box; }
-    body { margin: 0; background: #f5f4f1; color: #222; font-family: Arial, sans-serif; line-height: 1.6; }
-    .page { padding: 32px 1in; min-width: calc(300px + 300px + 400px + 96px + 2in); }
-    .ad-link { display: block; line-height: 0; }
-    .ad-link img { display: block; }
-    .leaderboard { display: flex; justify-content: center; margin-bottom: var(--ad-gap); }
+
+    body {
+      margin: 0;
+      background: #f5f4f1;
+      color: #222;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      padding: 32px 1in;
+      min-width: calc(300px + 300px + 400px + 96px + 2in);
+    }
+
+    .ad-link {
+      display: block;
+      line-height: 0;
+    }
+
+    .ad-link img {
+      display: block;
+    }
+
+    .leaderboard {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--ad-gap);
+    }
+
     .leaderboard img { width: 728px; height: 90px; }
-    .layout { display: grid; grid-template-columns: 300px minmax(400px, 1fr) 300px; gap: 48px; align-items: start; }
-    .left-col { padding-top: calc(var(--rect-height) + var(--ad-gap)); }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 300px minmax(400px, 1fr) 300px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .left-col {
+      padding-top: calc(var(--rect-height) + var(--ad-gap));
+    }
     .left-col img { width: 300px; height: 600px; }
-    .strategy { width: 100%; max-width: 720px; justify-self: center; }
-    .right-col { display: flex; flex-direction: column; align-items: flex-end; gap: var(--ad-gap); }
+
+    .strategy {
+      width: 100%;
+      max-width: 720px;
+      justify-self: center;
+    }
+
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: var(--ad-gap);
+    }
     .right-col .medium-rect img { width: 300px; height: 250px; }
     .right-col .skyscraper img { width: 160px; height: 600px; }
-    .strategy h2 { color: var(--maroon); margin: 0 0 12px; }
-    .strategy section + section { margin-top: 56px; }
-    .strategy p { margin: 0; }
+
+    .strategy h2 {
+      color: var(--maroon);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    .strategy section + section {
+      margin-top: 56px;
+    }
+
+    .strategy p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="Cedar Pointe Home"><img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course"></a>
+      <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
+        <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
+      </a>
+
       <nav class="top-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="ad-page.html" class="active" aria-current="page">Ad Page</a>
@@ -38,19 +102,47 @@
       </nav>
     </div>
   </header>
+
   <main class="page">
-    <div class="leaderboard"><a class="ad-link" href="landing-page.html"><img src="%28728%20x%2090%20px%29.png" alt="Leaderboard ad"></a></div>
+    <div class="leaderboard">
+      <a class="ad-link" href="landing-page.html">
+        <img src="%28728%20x%2090%20px%29.png" alt="Leaderboard ad">
+      </a>
+    </div>
+
     <div class="layout">
-      <aside class="left-col"><a class="ad-link" href="landing-page.html"><img src="%28300%20x%20600%20px%29.png" alt="Half page ad"></a></aside>
+      <aside class="left-col">
+        <a class="ad-link" href="landing-page.html">
+          <img src="%28300%20x%20600%20px%29.png" alt="Half page ad">
+        </a>
+      </aside>
+
       <article class="strategy">
-        <section><h2>Ad Strategy Overview</h2><p>Nine &amp; Wine is a one-night event at Cedar Pointe Golf Course in Boone that combines a relaxed nine-hole round with wine, pizza, and live patio entertainment.</p></section>
-        <section><h2>Target Audience</h2><p>Our audience is women ages 21 to 45 within about 40 miles of Boone, with additional interest among college students and young professionals.</p></section>
-        <section><h2>Design / Hook</h2><p>Our hook is “Your night out. Your kind of fun.” The creative answers the barrier that golf is stuffy or difficult by emphasizing friendship, fun, and an approachable evening.</p></section>
-        <section><h2>Financial Estimates</h2><p>Our campaign planning uses local digital advertising benchmarks and a coordinated landing-page experience to generate awareness and ticket or lead interest.</p></section>
+        <section>
+          <h2>Ad Strategy Overview</h2>
+          <p>Nine &amp; Wine is a one-night event at Cedar Pointe Golf Course in Boone that combines a relaxed nine-hole round with wine tastings from a mobile wine truck, pizza from Cedar Pointe's on-site kitchen, and live music. Our primary goal is to drive revenue by selling out the event's 72 golfer spots at $24 per ticket, with an optional $15 cart rental. Our secondary goal is to build brand awareness in Ames and Des Moines, where many potential customers have never visited Cedar Pointe or still think of it as a members-only country club. The campaign will run for four weeks before the event on Facebook, Instagram, and Google Search. We will spend more heavily in the final ten days, when urgency is highest, and retarget people who visit the ticket page without buying. We will measure success by tickets sold, cost per ticket, click-through rate, return on ad spend, and the share of guests from Ames and Des Moines ZIP codes, collected at checkout.</p>
+        </section>
+        <section>
+          <h2>Target Audience</h2>
+          <p>Our audience is women ages 21 to 45 within about 40 miles of Boone, focused on Ames, Ankeny, and the Des Moines metro. We set the minimum age at 21 because the event includes wine tastings. Within this group we are speaking to two segments: women in their twenties, including Iowa State students, recent grads, and young professionals looking for a new girl's night out, and women in their thirties and forties looking for a fun break, a birthday outing, or a night with friends. Most are casual players or have never golfed at all. Industry data shows this group is ready to be reached. According to the National Golf Foundation, the number of on-course female golfers in the U.S. rose 45 percent from 2020 to 2025, and women now make up a record-high 28% of on-course players, with even larger shares among beginners and off-course players. The NGF also reports that roughly two-thirds of new on-course golfers first played off-course, at places like Topgolf, which is exactly the experience Nine &amp; Wine builds on. On Facebook and Instagram, we will target interests such as wine, wine tasting, live music, girls' night, local events, and Topgolf. On Google, we will bid on searches like “things to do in Des Moines this weekend,” “wine tasting near me,” and “girls night ideas.”</p>
+        </section>
+        <section>
+          <h2>Design / Hook</h2>
+          <p>Our hook is “Your night out. Your kind of fun.” The biggest barrier for our audience is the belief that golf is stuffy, hard, or only for experienced players. The hook answers that by making the event about the guest, not her golf skills. It puts the night out first and lets her define what fun looks like, whether that's a great shot, a new favorite wine, or laughing with friends at sunset. Our visuals will show groups of women laughing on the green with wine glasses in hand, golden-hour lighting, live music, and pizza, with the golf playful rather than competitive. Short vertical videos for Instagram Reels and Stories will lead the campaign. Supporting copy will emphasize that no experience or membership is needed, that the format is beginner-friendly, and that Cedar Pointe is an easy drive from Ames and Des Moines. Every ad will end with a clear call to action: “Grab your friends and get your tickets.”</p>
+        </section>
+        <section>
+          <h2>Financial Estimates</h2>
+          <p>We based our projections on WordStream by LocaliQ’s 2026 benchmarks for the Sports &amp; Recreation industry. For Facebook and Instagram, we used the benchmarks for lead-focused campaigns, which aim to get people to take an action rather than just visit a page. These campaigns average a 3.16% click-through rate, a $1.08 cost per click, and a 6.75% conversion rate. For Google Search, Sports &amp; Recreation ads average an 8.75% click-through rate, a $2.77 cost per click, and a 7.69% conversion rate. We set our total budget at $1,256, the amount these benchmarks show is needed to sell out all 72 spots. We plan to spend $1,056 on Facebook and Instagram, which should produce about 31,000 impressions, 978 clicks, and 66 ticket sales. The remaining $200 goes to Google Search, which should bring about 72 clicks and 6 ticket sales from people already searching for things to do. Together that’s 72 projected sales, a full sellout, at an average cost of about $17 per ticket. At $24 per ticket, that’s $1,728 in ticket revenue. If half of the guests rent a cart, 36 carts at $15 each adds $540, for a total of $2,268 and a return of about 1.8 times the ad spend. These benchmarks count leads rather than paid purchases, and results often weaken as spending grows, so we will track sales weekly and support the ads with free social posts, word of mouth, and retargeting. These returns cover ad spend only, not event costs like the wine truck and entertainment. Pizza sales and the awareness gained among people who see the ads but don’t attend would add value beyond these figures.</p>
+        </section>
       </article>
+
       <aside class="right-col">
-        <a class="ad-link medium-rect" href="landing-page.html"><img src="%28300%20x%20250%20px%29.png" alt="Medium rectangle ad"></a>
-        <a class="ad-link skyscraper" href="landing-page.html"><img src="%28160%20x%20600%20px%29.png" alt="Wide skyscraper ad"></a>
+        <a class="ad-link medium-rect" href="landing-page.html">
+          <img src="%28300%20x%20250%20px%29.png" alt="Medium rectangle ad">
+        </a>
+        <a class="ad-link skyscraper" href="landing-page.html">
+          <img src="%28160%20x%20600%20px%29.png" alt="Wide skyscraper ad">
+        </a>
       </aside>
     </div>
   </main>
