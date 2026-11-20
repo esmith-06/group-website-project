@@ -32,7 +32,7 @@
     .top-nav a { text-decoration: none; color: #2d2d2d; font-weight: 700; padding: 10px 14px; border-radius: 8px; }
     .top-nav a:hover, .top-nav a:focus-visible, .top-nav a.active { background: #e9d8dc; color: #5b1420; }
 
-    .hero { background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy)); color: var(--white); padding: 64px 0 72px; }
+    .hero { background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy)); color: var(--cream); padding: 64px 0 72px; }
     .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 52px; align-items: center; }
     .eyebrow { color: var(--cream); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
     .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 6vw, 4.7rem); line-height: 1.02; margin-bottom: 18px; }
@@ -193,7 +193,7 @@
       <div class="container">
         <div class="section-heading">
           <h2>Mailbox Preview: Nine &amp; Wine Email</h2>
-          <p>A commercial email sent to our full list a few months after sign-up. The CTA button links to the Nine &amp; Wine landing page (landing-page.html).</p>
+          <p>A commercial email sent directly following sign-up. The CTA button links to the Nine &amp; Wine landing page (landing-page.html).</p>
         </div>
         <div class="mailbox">
           <figure class="mailbox-image">
@@ -219,7 +219,7 @@
   <script>
     const form = document.getElementById('signup-form');
     form.addEventListener('submit', function (event) {
-      event.preventEvent();
+      event.preventDefault();
       if (!form.reportValidity()) return;
       document.getElementById('form-status').classList.add('visible');
       form.querySelector('.submit-button').textContent = 'You’re on the list! ✓';
