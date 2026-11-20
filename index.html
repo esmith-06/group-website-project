@@ -5,349 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cedar Pointe Golf Course | Home</title>
     <style>
-      :root {
-        --burgundy: #1d4d3f;
-        --burgundy-dark: #163e32;
-        --burgundy-soft: #f3e7ea;
-        --white: #ffffff;
-        --light-bg: #f5f4f1;
-        --muted: #555555;
-        --border: #dfdad5;
-        --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-        --nav-hover: #e9d8dc;
-        --nav-hover-text: #5b1420;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: var(--light-bg);
-        color: #1d1d1d;
-        line-height: 1.6;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .topbar {
-        background: var(--white);
-        border-bottom: 1px solid #d8d8d8;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 88px;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo img {
-        height: 58px;
-        width: auto;
-        max-width: 220px;
-        object-fit: contain;
-      }
-
-      .top-nav {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        flex-wrap: wrap;
-      }
-
-      .top-nav a {
-        text-decoration: none;
-        color: #2d2d2d;
-        font-weight: 700;
-        padding: 10px 16px;
-        border-radius: 8px;
-        transition: background-color 0.18s ease, color 0.18s ease;
-      }
-
-      .top-nav a:hover,
-      .top-nav a:focus-visible,
-      .top-nav a.active {
-        background: var(--nav-hover);
-        color: var(--nav-hover-text);
-      }
-
-      .top-nav a:focus-visible,
-      .assignment-button:focus-visible,
-      .back-link:focus-visible {
-        outline: 3px solid #1d63b0;
-        outline-offset: 2px;
-      }
-
-      .home-page {
-        padding-bottom: 60px;
-      }
-
-      .hero-banner {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        background: #e9e1d5;
-      }
-
-      .hero-banner img {
-        width: 100%;
-        height: clamp(260px, 38vw, 480px);
-        object-fit: cover;
-        object-position: center;
-      }
-
-      .hero-overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 24px;
-        background: rgba(28, 19, 18, 0.28);
-      }
-
-      .hero-overlay h1 {
-        color: var(--white);
-        font-size: clamp(2.1rem, 3vw, 3.5rem);
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
-      }
-
-      .hero-overlay p {
-        margin-top: 10px;
-        max-width: 760px;
-        font-size: clamp(0.95rem, 1.4vw, 1.2rem);
-        color: #f6f3f2;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-      }
-
-      .content-shell {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 36px 20px 0;
-      }
-
-      .overview {
-        text-align: center;
-      }
-
-      .overview h2,
-      .assignment-card h3,
-      .detail-page h1 {
-        color: var(--burgundy);
-      }
-
-      .overview h2 {
-        font-size: clamp(2rem, 3vw, 2.6rem);
-        margin-bottom: 18px;
-      }
-
-      .overview-box {
-        max-width: 760px;
-        margin: 0 auto;
-        min-height: 150px;
-        background: rgba(255, 255, 255, 0.6);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 24px 28px;
-        box-shadow: var(--shadow);
-      }
-
-      .overview-box p {
-        color: #2c2c2c;
-        font-size: 1.02rem;
-      }
-
-      .assignment-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 26px;
-        padding-top: 36px;
-      }
-
-      .assignment-card {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        padding: 28px 26px;
-        text-align: left;
-      }
-
-      .assignment-card h3 {
-        font-size: clamp(1.7rem, 2.2vw, 2.2rem);
-        margin-bottom: 14px;
-      }
-
-      .assignment-card p {
-        color: var(--muted);
-        margin-bottom: 22px;
-        max-width: 720px;
-      }
-
-      .assignment-button,
-      .back-link {
-        display: inline-block;
-        padding: 14px 24px;
-        border-radius: 999px;
-        background: var(--burgundy);
-        color: var(--white);
-        font-weight: 700;
-        text-decoration: none;
-        transition: background-color 0.2s ease;
-      }
-
-      .assignment-button:hover,
-      .assignment-button:focus-visible,
-      .back-link:hover,
-      .back-link:focus-visible {
-        background: var(--burgundy-dark);
-      }
-
-      .detail-page {
-        min-height: 100vh;
-        background: var(--light-bg);
-        padding: 48px 20px 64px;
-      }
-
-      .detail-content {
-        max-width: 900px;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        box-shadow: var(--shadow);
-        padding: 36px 28px 28px;
-      }
-
-      .detail-page h1 {
-        text-align: center;
-        font-size: clamp(2.2rem, 4vw, 3rem);
-        margin-bottom: 20px;
-      }
-
-      .detail-page p {
-        margin-bottom: 16px;
-        color: #2b2b2b;
-        font-size: 1.05rem;
-      }
-
-      .detail-page .back-link {
-        margin-top: 18px;
-      }
-
-      @media (max-width: 600px) {
-        .header-inner {
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: center;
-          padding-top: 14px;
-          padding-bottom: 14px;
-        }
-
-        .top-nav {
-          gap: 8px;
-        }
-
-        .overview-box {
-          min-height: 110px;
-          padding: 18px 16px;
-        }
-
-        .assignment-card {
-          padding: 22px 18px;
-        }
-      }
+      :root { --green:#1d4d3f; --green-dark:#163e32; --white:#fff; --light-bg:#f5f4f1; --muted:#555; --border:#dfdad5; --shadow:0 10px 24px rgba(0,0,0,.08); --nav-hover:#e9d8dc; }
+      * { box-sizing:border-box; margin:0; padding:0; }
+      body { font-family:Arial,sans-serif; background:var(--light-bg); color:#1d1d1d; line-height:1.6; }
+      img { display:block; max-width:100%; }
+      a { color:inherit; }
+      .topbar { background:var(--white); border-bottom:1px solid #d8d8d8; box-shadow:0 2px 8px rgba(0,0,0,.04); }
+      .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+      .header-inner { display:flex; align-items:center; justify-content:space-between; min-height:88px; }
+      .logo img { height:58px; width:auto; max-width:220px; object-fit:contain; }
+      .top-nav { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+      .top-nav a { text-decoration:none; color:#2d2d2d; font-weight:700; padding:10px 16px; border-radius:8px; }
+      .top-nav a:hover,.top-nav a:focus-visible,.top-nav a.active { background:var(--nav-hover); color:#5b1420; }
+      .top-nav a:focus-visible,.assignment-button:focus-visible { outline:3px solid #1d63b0; outline-offset:2px; }
+      .hero { position:relative; overflow:hidden; background:#e9e1d5; }
+      .hero img { width:100%; height:clamp(260px,38vw,480px); object-fit:cover; }
+      .hero-copy { position:absolute; inset:0; display:grid; place-content:center; text-align:center; padding:24px; color:#fff; background:rgba(28,19,18,.28); text-shadow:0 3px 10px rgba(0,0,0,.45); }
+      .hero-copy h1 { font-size:clamp(2.1rem,3vw,3.5rem); }
+      .hero-copy p { margin-top:10px; }
+      .content { max-width:1000px; margin:0 auto; padding:36px 20px 0; }
+      .overview { text-align:center; }
+      h2,.assignment-card h3 { color:var(--green); }
+      .overview h2 { font-size:clamp(2rem,3vw,2.6rem); margin-bottom:18px; }
+      .overview-box,.assignment-card { background:#fff; border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:24px 28px; }
+      .overview-box { max-width:760px; margin:auto; }
+      .assignment-grid { display:grid; gap:26px; padding-top:36px; }
+      .assignment-card { padding:28px 26px; }
+      .assignment-card h3 { font-size:clamp(1.7rem,2.2vw,2.2rem); margin-bottom:14px; }
+      .assignment-card p { color:var(--muted); margin-bottom:22px; max-width:720px; }
+      .assignment-button { display:inline-block; padding:14px 24px; border-radius:999px; background:var(--green); color:#fff; font-weight:700; text-decoration:none; }
+      .assignment-button:hover { background:var(--green-dark); }
+      @media(max-width:600px) { .header-inner { flex-direction:column; align-items:flex-start; padding:14px 0; } .top-nav { gap:8px; } .overview-box,.assignment-card { padding:20px 16px; } }
     </style>
   </head>
   <body>
-    <header class="topbar">
-      <div class="container header-inner">
-        <a href="index.html" class="logo" aria-label="Cedar Pointe Home">
-          <img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" />
-        </a>
-
-        <nav class="top-nav" aria-label="Main navigation">
-          <a href="index.html" class="active">Home</a>
-          <a href="ad-page.html">Ad Page</a>
-          <a href="landing-page.html">Landing Page</a>
-        </nav>
-      </div>
-    </header>
-
-    <main class="home-page">
-      <section class="hero-banner" aria-label="Cedar Pointe Golf Course banner">
-        <img src="Cedar_Pointe.avif" alt="Cedar Pointe Golf Course" />
-        <div class="hero-overlay">
-          <h1>Cedar Pointe Golf Course</h1>
-          <p>A semester-long marketing project focused on Cedar Pointe Golf Course in Boone, Iowa.</p>
-        </div>
-      </section>
-
-      <section class="content-shell overview" aria-labelledby="overview-heading">
-        <h2 id="overview-heading">Project overview</h2>
-        <div class="overview-box">
-          <p>
-            This page provides an overview of our semester-long marketing project focused on Cedar Pointe
-            Golf Course. Throughout the semester, we applied concepts from web design, user experience,
-            SEO, and digital advertising to evaluate and improve the business's online presence. The
-            sections below highlight each assignment we completed, the strategies we developed, and the
-            work our team put into creating an effective online experience for Cedar Pointe Golf Course.
-          </p>
-        </div>
-      </section>
-
-      <section class="content-shell assignment-grid" aria-label="Project assignments">
-        <article class="assignment-card">
-          <h3>Website Audit</h3>
-          <p>
-            For this assignment, we evaluated Cedar Pointe Golf Course's existing website by conducting
-            UI, UX, SEO, and performance audits. We reviewed the site's design, navigation, content,
-            search engine visibility, and overall performance to identify strengths and areas for
-            improvement. Based on our findings, we developed recommendations to improve the website's
-            usability, accessibility, and overall visitor experience.
-          </p>
-          <a class="assignment-button" href="website-audit.html">Click here to learn more</a>
-        </article>
-
-        <article class="assignment-card">
-          <h3>Display Ad Campaign</h3>
-          <p>
-            For this assignment, we developed a display advertising campaign to promote Cedar Pointe Golf
-            Course and attract potential customers. We identified a target audience, established campaign
-            goals, researched industry benchmarks, and created messaging to capture visitors' attention.
-            We also designed four different ad sizes and developed a dedicated landing page to provide a
-            consistent experience and encourage visitors to take action.
-          </p>
-          <a class="assignment-button" href="display-ad-campaign.html">Click here to learn more</a>
-        </article>
+    <header class="topbar"><div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Cedar Pointe Home"><img src="cedar-pointe-logo-300x116.png" alt="Cedar Pointe Golf Course" /></a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="ad-page.html">Ad Page</a>
+        <a href="landing-page.html">Landing Page</a>
+        <a href="email.html">Email Page</a>
+      </nav>
+    </div></header>
+    <main>
+      <section class="hero" aria-label="Cedar Pointe Golf Course banner"><img src="Cedar_Pointe.avif" alt="Cedar Pointe Golf Course" /><div class="hero-copy"><h1>Cedar Pointe Golf Course</h1><p>A semester-long marketing project focused on Cedar Pointe Golf Course in Boone, Iowa.</p></div></section>
+      <section class="content overview"><h2>Project overview</h2><div class="overview-box"><p>This page provides an overview of our semester-long marketing project focused on Cedar Pointe Golf Course. Throughout the semester, we applied concepts from web design, user experience, SEO, and digital advertising to evaluate and improve the business's online presence.</p></div></section>
+      <section class="content assignment-grid" aria-label="Project assignments">
+        <article class="assignment-card"><h3>Website Audit</h3><p>We evaluated Cedar Pointe Golf Course's website through UI, UX, SEO, and performance audits, then developed recommendations to improve usability, accessibility, and the visitor experience.</p><a class="assignment-button" href="website-audit.html">Click here to learn more</a></article>
+        <article class="assignment-card"><h3>Display Ad Campaign</h3><p>We developed a display advertising campaign, identified its target audience and goals, designed four ad sizes, and created a dedicated landing page.</p><a class="assignment-button" href="display-ad-campaign.html">Click here to learn more</a></article>
       </section>
     </main>
   </body>
