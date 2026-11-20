@@ -7,12 +7,11 @@
   <meta name="description" content="Join the Cedar Pointe Nine & Wine list for early ticket access, event reminders, and exclusive updates.">
   <style>
     :root {
-      --green-dark: #1a3c34;
-      --green: #2d5a4a;
+      --burgundy-dark: #5b1420;
+      --burgundy: #7a1f2d;
+      --burgundy-soft: #f3e7ea;
       --cream: #f8f5f0;
       --cream-dark: #eee8dc;
-      --gold: #c9a227;
-      --gold-dark: #ae8817;
       --white: #fff;
       --ink: #1f2a27;
       --muted: #5a6a64;
@@ -24,64 +23,62 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; }
     .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+
     .site-header { background: var(--white); border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10; }
     .header-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--green-dark); font-weight: 800; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--burgundy-dark); font-weight: 800; }
     .logo img { height: 58px; width: auto; }
     .top-nav { display: flex; flex-wrap: wrap; gap: 8px; }
     .top-nav a { text-decoration: none; color: #2d2d2d; font-weight: 700; padding: 10px 14px; border-radius: 8px; }
     .top-nav a:hover, .top-nav a:focus-visible, .top-nav a.active { background: #e9d8dc; color: #5b1420; }
 
-    .hero { background: linear-gradient(135deg, var(--green-dark), var(--green)); color: var(--white); padding: 64px 0 72px; }
+    .hero { background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy)); color: var(--white); padding: 64px 0 72px; }
     .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 52px; align-items: center; }
-    .eyebrow { color: var(--gold); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .eyebrow { color: var(--cream); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
     .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 6vw, 4.7rem); line-height: 1.02; margin-bottom: 18px; }
     .lead { max-width: 560px; font-size: 1.15rem; margin-bottom: 22px; }
     .benefits { list-style: none; display: grid; gap: 10px; }
     .benefits li { display: flex; align-items: flex-start; gap: 10px; }
-    .check { width: 22px; height: 22px; flex: 0 0 22px; border-radius: 50%; background: var(--gold); color: var(--green-dark); display: inline-grid; place-items: center; font-weight: 900; }
+    .check { width: 22px; height: 22px; flex: 0 0 22px; border-radius: 50%; background: var(--cream); color: var(--burgundy-dark); display: inline-grid; place-items: center; font-weight: 900; }
 
     .form-card { background: var(--white); color: var(--ink); border-radius: 16px; padding: 28px; box-shadow: 0 20px 50px rgba(0,0,0,.22); }
-    .form-card h2 { color: var(--green-dark); font-family: Georgia, serif; font-size: 1.75rem; line-height: 1.2; margin-bottom: 6px; }
+    .form-card h2 { color: var(--burgundy-dark); font-family: Georgia, serif; font-size: 1.75rem; line-height: 1.2; margin-bottom: 6px; }
     .form-sub { color: var(--muted); margin-bottom: 20px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .field { display: grid; gap: 6px; margin-bottom: 14px; }
     .field label { font-size: .9rem; font-weight: 800; }
     .optional { color: var(--muted); font-weight: 400; }
     .field input, .field select { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font: inherit; background: var(--white); }
-    .field input:focus, .field select:focus { border-color: var(--green); outline: 3px solid rgba(45,90,74,.16); }
-    .submit-button { width: 100%; min-height: 50px; border: 0; border-radius: 8px; background: var(--gold); color: var(--green-dark); font-weight: 900; font-size: 1.02rem; cursor: pointer; }
-    .submit-button:hover { background: var(--gold-dark); }
+    .field input:focus, .field select:focus { border-color: var(--burgundy); outline: 3px solid rgba(122,31,45,.18); }
+    .submit-button { width: 100%; min-height: 50px; border: 0; border-radius: 8px; background: var(--burgundy); color: var(--white); font-weight: 900; font-size: 1.02rem; cursor: pointer; }
+    .submit-button:hover { background: var(--burgundy-dark); }
     .form-note { margin-top: 12px; font-size: .78rem; color: var(--muted); text-align: center; }
-    .form-status { display: none; margin-top: 12px; padding: 12px; border-radius: 8px; background: #edf7f1; color: #175a3a; font-weight: 700; text-align: center; }
+    .form-status { display: none; margin-top: 12px; padding: 12px; border-radius: 8px; background: var(--burgundy-soft); color: var(--burgundy-dark); font-weight: 700; text-align: center; }
     .form-status.visible { display: block; }
 
     .section { padding: 72px 0; }
     .section-heading { max-width: 680px; margin: 0 auto 34px; text-align: center; }
-    .section-heading h2 { color: var(--green-dark); font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 2.65rem); margin-bottom: 8px; }
+    .section-heading h2 { color: var(--burgundy-dark); font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 2.65rem); margin-bottom: 8px; }
     .section-heading p { color: var(--muted); }
     .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .audience-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 8px 20px rgba(26,60,52,.08); }
-    .audience-number { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--white); font-weight: 900; margin-bottom: 16px; }
-    .audience-card h3 { color: var(--green-dark); margin-bottom: 12px; }
+    .audience-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 8px 20px rgba(91,20,32,.08); }
+    .audience-number { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--burgundy); color: var(--white); font-weight: 900; margin-bottom: 16px; }
+    .audience-card h3 { color: var(--burgundy-dark); margin-bottom: 12px; }
     .audience-card p { color: var(--muted); }
 
     .mailbox-section { background: var(--cream-dark); }
-    .mailbox { max-width: 760px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 16px 32px rgba(26,60,52,.12); overflow: hidden; }
-    .mailbar { background: #edf0ed; border-bottom: 1px solid var(--border); padding: 14px 18px; color: var(--muted); font-size: .9rem; }
-    .email-copy { padding: 36px; }
-    .email-copy .brand { color: var(--green-dark); font-weight: 900; margin-bottom: 20px; }
-    .email-copy h3 { font-family: Georgia, serif; color: var(--green-dark); font-size: 2rem; margin-bottom: 12px; }
-    .email-copy p { margin-bottom: 16px; }
-    .email-button { display: inline-block; background: var(--gold); color: var(--green-dark); text-decoration: none; border-radius: 8px; padding: 12px 20px; font-weight: 900; }
-    .email-footer { background: var(--green-dark); color: var(--white); padding: 24px 36px; text-align: center; font-size: .84rem; }
-    .email-footer a { color: var(--gold); }
+    .mailbox { max-width: 760px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 16px 32px rgba(91,20,32,.12); overflow: hidden; }
+    .mailbox-image { margin: 0; }
+    .mailbox-image img { width: 100%; height: auto; display: block; }
 
-    .site-footer { background: var(--green-dark); color: rgba(255,255,255,.88); padding: 28px 0; text-align: center; }
+    .site-footer { background: var(--burgundy-dark); color: rgba(255,255,255,.88); padding: 28px 0; text-align: center; }
     .site-footer p + p { margin-top: 6px; }
 
     :focus-visible { outline: 3px solid #1d63b0; outline-offset: 3px; }
-    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .audience-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 640px) {
       .container { width: min(100% - 28px, 1100px); }
       .header-inner { min-height: auto; padding: 12px 0; align-items: flex-start; flex-direction: column; }
@@ -91,8 +88,6 @@
       .hero-grid { gap: 30px; }
       .form-row { grid-template-columns: 1fr; }
       .section { padding: 52px 0; }
-      .email-copy { padding: 24px 20px; }
-      .email-footer { padding: 22px 20px; }
     }
   </style>
 </head>
@@ -163,30 +158,32 @@
     <section class="section" id="strategy">
       <div class="container">
         <div class="section-heading">
-          <h2>A list built around local golfers</h2>
-          <p>Each customer group receives a clear reason to join and a promise worth staying for.</p>
+          <h2>Three Ways We'll Grow the Nine &amp; Wine List</h2>
+          <p>Each customer group gets a clear reason to join today and a promise worth staying subscribed for.</p>
         </div>
         <div class="audience-grid">
           <article class="audience-card">
             <div class="audience-number">1</div>
-            <h3>Casual golfers</h3>
-            <p><strong>Collect:</strong> course and event sign-up forms.</p>
-            <p><strong>Immediate value:</strong> early access to the limited-event tickets.</p>
-            <p><strong>Long-term promise:</strong> friendly offers and easygoing golf experiences.</p>
+            <h3>Nine &amp; Wine Ticket Buyers</h3>
+            <p><strong>Where/how:</strong> This customer group will find an opt-in checkbox at the online ticket checkout through our landing page, which will be left unchecked by default. For those who are purchasing tickets in person, there will be a QR code on table tents that says "Scan for 10% off your first purchase." We will reach these customers through Meta and Google ads that lead them to our landing page and the checkout page.</p>
+            <p><strong>Immediate value:</strong> The online and in-person customers will be offered a 10% discount on their first purchase of a Nine &amp; Wine event ticket.</p>
+            <p><strong>Long-term value:</strong> By joining our email list, customers will receive first access to future Nine &amp; Wine event details before they go public. Additionally, as an email list member, if they attend eight Nine &amp; Wine events, they receive a free round of four on their ninth attended event.</p>
           </article>
+
           <article class="audience-card">
             <div class="audience-number">2</div>
-            <h3>Social planners</h3>
-            <p><strong>Collect:</strong> interest in event-style golf and group outings.</p>
-            <p><strong>Immediate value:</strong> a ready-made evening with wine and live music.</p>
-            <p><strong>Long-term promise:</strong> more memorable local gatherings.</p>
+            <h3>Iowa State Students &amp; Young Professionals (Ames/DSM)</h3>
+            <p><strong>Where/how:</strong> Flyers with QR codes will be posted around campus and Campustown businesses, as well as in downtown Des Moines. Cedar Pointe will have an Instagram giveaway where those interested have to tag their friends and join the email list to enter to win a free round for four.</p>
+            <p><strong>Immediate value:</strong> Young adults in the Ames/DSM area will receive the same 10% discount off their first event ticket purchase as seen above. Students in the Ames/DSM area will receive a special 15% student discount.</p>
+            <p><strong>Long-term value:</strong> This group will receive student-only deals and will also be eligible for the "Get your ninth event free" deal.</p>
           </article>
+
           <article class="audience-card">
             <div class="audience-number">3</div>
-            <h3>Current members</h3>
-            <p><strong>Collect:</strong> member preferences and opt-in email updates.</p>
-            <p><strong>Immediate value:</strong> priority news and member-focused details.</p>
-            <p><strong>Long-term promise:</strong> useful course news and first looks at new events.</p>
+            <h3>Current Cedar Pointe Golfers &amp; Pizza Customers (Boone)</h3>
+            <p><strong>Where/how:</strong> Cedar Pointe employees will ask customers if they would like to join the email list for exclusive event updates. The pizza shop will print a QR code on pizza boxes and receipts that links to an event-update email sign-up.</p>
+            <p><strong>Immediate value:</strong> Existing golfers will receive the same offer of 10% off their first event ticket purchase. Pizza customers will receive an offer for $5 off their next pizza.</p>
+            <p><strong>Long-term value:</strong> Existing customers will be entered into the "9th round free" deal and a loyalty program where benefits (like a free birthday round) are rewarded. They'll also be the first to receive updates on all Cedar Pointe events.</p>
           </article>
         </div>
       </div>
@@ -195,22 +192,17 @@
     <section class="section mailbox-section" id="mailbox">
       <div class="container">
         <div class="section-heading">
-          <h2>Preview the first email</h2>
-          <p>A clear, welcoming message that turns interest into early ticket access.</p>
+          <h2>Mailbox Preview: Nine &amp; Wine Email</h2>
+          <p>A commercial email sent to our full list a few months after sign-up. The CTA button links to the Nine &amp; Wine landing page (landing-page.html).</p>
         </div>
         <div class="mailbox">
-          <div class="mailbar">From: Cedar Pointe Golf Course · Nine & Wine announcement</div>
-          <div class="email-copy">
-            <p class="brand">CEDAR POINTE GOLF COURSE</p>
-            <h3>Your Nine & Wine night is coming</h3>
-            <p>Hi neighbor,</p>
-            <p>Join us for nine relaxed holes, great wine, fresh pizza, and live music. Because only 72 tickets are available, subscribers get first notice when reservations open.</p>
-            <a class="email-button" href="#signup">Join the ticket list</a>
-          </div>
-          <div class="email-footer">
-            <p>Cedar Pointe Golf Course · 601 S Cedar St, Boone, IA 50036</p>
-            <p><a href="tel:+15154326002">(515) 432-6002</a> · <a href="#signup">Manage preferences</a> · <a href="#signup">Unsubscribe</a></p>
-          </div>
+          <figure class="mailbox-image">
+            <img src="Email%20Marketing%20Assignment%20(1).png"
+                 alt="Email preview from Cedar Pointe Golf Course, subject 'Your Next Girls' Night Awaits.' Greeting: Hi [first name]. Invites readers to Nine &amp; Wine on Thursday, April 22, 2027: golf, wine tastings, pizza, and live patio entertainment. Golf tickets $24 per person, optional cart rental $15, food, wine, and entertainment until 10 p.m. CTA button: Reserve Your Spot, linking to the Nine &amp; Wine landing page. Burgundy branded footer with the tagline 'Your Night Out. Your Kind of Fun.', 601 S Cedar Street, Boone, IA 50036, Facebook and Instagram icons, and Privacy Policy, Forward to a Friend, and Unsubscribe links."
+                 width="1200"
+                 height="2400"
+                 loading="lazy">
+          </figure>
         </div>
       </div>
     </section>
@@ -227,7 +219,7 @@
   <script>
     const form = document.getElementById('signup-form');
     form.addEventListener('submit', function (event) {
-      event.preventDefault();
+      event.preventEvent();
       if (!form.reportValidity()) return;
       document.getElementById('form-status').classList.add('visible');
       form.querySelector('.submit-button').textContent = 'You’re on the list! ✓';
